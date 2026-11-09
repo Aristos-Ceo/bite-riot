@@ -1099,3 +1099,368 @@ a:focus-visible {
 }
 
 
+
+
+/* =========================================================
+   BITE RIOT MOBILE POLISH + INTRO / ROUTE LOADING EXPERIENCE
+   ========================================================= */
+
+/* Keep the homepage canvas inside the viewport. The clip value prevents
+   horizontal page drift without breaking sticky elements or inner scrollers. */
+.br-home-page {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow-x: clip;
+}
+.br-home-page > * {
+  min-width: 0;
+  max-width: 100%;
+}
+body:has(.br-home-page) {
+  overflow-x: clip;
+}
+@supports not (overflow-x: clip) {
+  body:has(.br-home-page) { overflow-x: hidden; }
+}
+
+/* The mobile hero should show the centre of every food photograph. */
+@media (max-width: 760px) {
+  .br-hero-slide,
+  .story-hero .br-hero-slide {
+    object-position: center center !important;
+  }
+  .br-menu-hero-slide {
+    background-position: center center !important;
+  }
+  .br-combo-hero-image,
+  .br-offers-hero-image {
+    background-position: center center !important;
+  }
+  .br-hero-background-mode .br-hero-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+    min-height: 0;
+    width: 100%;
+    padding-top: 82px;
+    padding-bottom: 88px;
+  }
+  .br-hero-background-mode .br-hero-copy {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 620px;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .br-hero-background-mode .br-hero-eyebrow {
+    justify-content: center;
+    text-align: center;
+  }
+  .br-hero-background-mode .br-hero-title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .br-hero-background-mode .br-hero-feature-copy {
+    width: 100%;
+    max-width: 520px;
+    text-align: center;
+  }
+  .br-hero-background-mode .br-hero-feature-copy p {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .br-hero-background-mode .hero-actions {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .br-hero-background-mode .hero-proof {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .br-hero-side-note {
+    display: none !important;
+  }
+  .br-hero-background-mode .br-hero-bottomline {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    padding: 0 14px 16px;
+    text-align: center;
+  }
+}
+
+/* Repair the home discovery panel on narrow screens without changing desktop. */
+@media (max-width: 560px) {
+  .home-discovery {
+    width: 100%;
+    max-width: 100%;
+    padding: 64px 0 72px;
+  }
+  .home-discovery > .wrap {
+    width: calc(100% - 32px);
+    max-width: 100%;
+    min-width: 0;
+  }
+  .discovery-heading {
+    display: block;
+    margin-bottom: 22px;
+  }
+  .discovery-heading h2 {
+    font-size: clamp(39px, 11vw, 58px);
+    line-height: .94;
+    overflow-wrap: normal;
+  }
+  .discovery-heading > p {
+    max-width: 340px;
+    margin: 14px 0 0;
+    font-size: 12px;
+  }
+  .discovery-tabs {
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+    gap: 7px;
+    padding: 4px 1px 13px;
+    overscroll-behavior-x: contain;
+  }
+  .discovery-tabs button {
+    padding: 11px 14px;
+    font-size: 9px;
+  }
+  .discovery-stage {
+    width: 100%;
+    min-width: 0;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 14px;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 20px;
+  }
+  .discovery-visual {
+    width: 100%;
+    min-width: 0;
+    min-height: 280px;
+    border-radius: 15px;
+  }
+  .discovery-visual-top {
+    top: 14px;
+    left: 14px;
+    right: 14px;
+    font-size: 7px;
+    letter-spacing: .1em;
+  }
+  .discovery-image-wrap {
+    width: 100%;
+    height: 245px;
+  }
+  .discovery-main-image {
+    width: 92%;
+    max-width: 100%;
+    object-position: center center;
+  }
+  .discovery-image-caption {
+    left: 14px;
+    bottom: 13px;
+    font-size: 7px;
+  }
+  .discovery-details {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 5px 12px;
+  }
+  .discovery-index,
+  .discovery-choice-label {
+    gap: 8px;
+    font-size: 7px;
+    letter-spacing: .09em;
+  }
+  .discovery-product-name {
+    font-size: clamp(36px, 10vw, 48px);
+    overflow-wrap: anywhere;
+  }
+  .discovery-description {
+    min-height: 0;
+  }
+  .discovery-options {
+    width: 100%;
+    max-width: 100%;
+    gap: 7px;
+    overscroll-behavior-x: contain;
+  }
+  .discovery-option {
+    flex-basis: 78px;
+    min-width: 78px;
+  }
+  .discovery-actions {
+    align-items: stretch;
+    gap: 12px;
+  }
+}
+
+/* Story hero kicker: white as requested, with enough contrast over each slide. */
+.br-story-page .story-hero-content > .eyebrow {
+  color: #fff !important;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, .45);
+}
+
+/* Branded first-visit intro and the same treatment for slow route loading. */
+.br-intro-overlay,
+.br-route-loading {
+  position: fixed;
+  inset: 0;
+  z-index: 100000;
+  background: #102d22;
+}
+.br-intro-overlay {
+  animation: br-intro-overlay-in .35s ease both;
+}
+.br-route-loading {
+  position: relative;
+  z-index: 1;
+  min-height: 100svh;
+}
+.br-loading-screen {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+  color: #f5f0e5;
+  background:
+    radial-gradient(ellipse at 50% 42%, rgba(184, 227, 74, .16), transparent 34%),
+    linear-gradient(135deg, #0d281d 0%, #123c2d 58%, #1d6042 100%);
+}
+.br-loading-grain {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: .13;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(245,240,229,.7) .55px, transparent .55px);
+  background-size: 5px 5px;
+}
+.br-loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(88%, 480px);
+  text-align: center;
+  animation: br-loading-content-in .8s cubic-bezier(.2,.8,.2,1) both;
+}
+.br-loading-stamp {
+  display: grid;
+  place-items: center;
+  width: 66px;
+  height: 66px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(245,240,229,.5);
+  border-radius: 50%;
+  color: #b8e34a;
+  font-size: 34px;
+  animation: br-loading-stamp-turn 8s linear infinite;
+}
+.br-loading-eyebrow,
+.br-loading-caption,
+.br-loading-corner {
+  font-family: "Syne", Arial, sans-serif;
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .2em;
+}
+.br-loading-eyebrow {
+  margin: 0 0 14px;
+  color: #b8e34a;
+}
+.br-loading-wordmark {
+  display: flex;
+  flex-direction: column;
+  color: #f5f0e5;
+  font-family: "Syne", Arial, sans-serif;
+  font-size: clamp(58px, 15vw, 104px);
+  font-weight: 800;
+  line-height: .78;
+  letter-spacing: -.095em;
+}
+.br-loading-wordmark span {
+  color: #b8e34a;
+  font-family: "Bodoni Moda", Georgia, serif;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: -.08em;
+}
+.br-loading-tagline {
+  margin: 22px 0 32px;
+  color: rgba(245,240,229,.82);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .2em;
+}
+.br-loading-track {
+  width: min(100%, 270px);
+  height: 3px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(245,240,229,.2);
+}
+.br-loading-track span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  background: #b8e34a;
+  transform: scaleX(0);
+  transform-origin: left center;
+  animation: br-loading-progress 3.25s cubic-bezier(.45,.05,.55,.95) forwards;
+}
+.br-loading-caption {
+  margin: 14px 0 0;
+  color: rgba(245,240,229,.58);
+  font-size: 7px;
+  letter-spacing: .18em;
+}
+.br-loading-corner {
+  position: absolute;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  color: rgba(245,240,229,.48);
+  font-size: 7px;
+}
+.br-loading-corner-left { left: 22px; }
+.br-loading-corner-right { right: 22px; }
+@keyframes br-intro-overlay-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes br-loading-content-in {
+  from { opacity: 0; transform: translateY(18px) scale(.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes br-loading-stamp-turn {
+  to { transform: rotate(360deg); }
+}
+@keyframes br-loading-progress {
+  0% { transform: scaleX(0); }
+  18% { transform: scaleX(.22); }
+  72% { transform: scaleX(.78); }
+  100% { transform: scaleX(1); }
+}
+@media (max-width: 480px) {
+  .br-loading-stamp { width: 56px; height: 56px; font-size: 29px; }
+  .br-loading-corner-left { left: 14px; }
+  .br-loading-corner-right { right: 14px; }
+  .br-loading-eyebrow { font-size: 8px; }
+  .br-loading-tagline { font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .br-loading-stamp { animation: none; }
+  .br-loading-content { animation: none; }
+  .br-loading-track span { animation-duration: 1ms; }
+}

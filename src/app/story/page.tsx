@@ -18,7 +18,7 @@ const gallery = [
 export default function Page() {
   return <main className="story-page br-story-page">
     <section className="story-hero">
-      <HeroBackgroundSlideshow images={[sectionImages.storyBurger, sectionImages.storyChicken, sectionImages.storyPizza, sectionImages.storySharing]} label="BITE RIOT story photography" interval={2300} />
+      <HeroBackgroundSlideshow images={[sectionImages.storySharing, sectionImages.storyChicken, sectionImages.storyPizza, sectionImages.storySides]} label="BITE RIOT story photography" interval={2300} />
       <div className="wrap story-hero-content">
         <div className="eyebrow">THE BITE RIOT POINT OF VIEW / EST. IN GOOD TASTE</div>
         <h1 className="display">A LITTLE<br />ATTITUDE.<br /><em>A LOT OF<br />FLAVOUR.</em></h1>
