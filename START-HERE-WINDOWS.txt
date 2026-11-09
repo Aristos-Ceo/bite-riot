@@ -1,0 +1,68 @@
+BITE RIOT — WINDOWS SETUP
+=========================
+
+IMPORTANT: Open this folder in VS Code:
+C:\Users\PRINCESS\Desktop\riot v3
+
+FIRST-TIME SETUP
+----------------
+1. Open VS Code in the riot v3 folder.
+2. Open Terminal > New Terminal.
+3. Run these commands ONE AT A TIME:
+
+   npm.cmd install
+
+   npm.cmd run db:push
+
+   npm.cmd run db:seed
+
+   npm.cmd run dev
+
+4. Wait for "Ready" and open:
+   http://localhost:3000
+
+5. If the page looks old, press Ctrl + Shift + R in Chrome.
+
+WHAT'S INCLUDED
+---------------
+- Home hero: seven original BITE RIOT food-photo slides.
+- Menu hero: rotating food photography and all 80 mapped products.
+- Product categories, search, product cards and add-to-bag actions.
+- Our Story: text and image grouped together with improved spacing.
+- Combos: image hover treatment and WhatsApp contact link.
+- Customer account: create-account and sign-in forms.
+- Toast pop-ups for add-to-bag, account and order actions.
+
+CUSTOMER ACCOUNT EMAIL ALERTS
+-----------------------------
+The account form creates a real local customer account. Passwords are
+securely hashed and NEVER sent by email.
+
+New account name, email and phone notifications are sent to:
+itzavery57@gmail.com
+
+To enable the email delivery service:
+1. Create a Resend account and verify a sending domain.
+2. Open the .env file in the riot v3 folder.
+3. Set these values:
+
+   RESEND_API_KEY="your_resend_api_key"
+   BITE_RIOT_FROM_EMAIL="BITE RIOT <accounts@your-verified-domain.com>"
+   BITE_RIOT_OWNER_EMAIL="itzavery57@gmail.com"
+
+4. Save .env and restart the dev server.
+
+Do not share your Resend API key. The sender address must belong to a
+domain verified in Resend. Until configured, accounts still work locally,
+but the store email notification will not be sent.
+
+WHATSAPP
+--------
+The Combos page links to WhatsApp number 09137902342
+(international link: +234 913 792 30242).
+
+IF YOU SEE AN ERROR
+-------------------
+Stop the server with Ctrl + C. Copy the complete error from the terminal
+and share it so the exact issue can be fixed. Do not delete src, public,
+or prisma folders.

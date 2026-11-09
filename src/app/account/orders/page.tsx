@@ -1,0 +1,14 @@
+"use client";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { Package, ArrowUpRight, LogOut, ShoppingBag } from "lucide-react";
+import { money } from "@/lib/money";
+
+type Order = { reference:string; status:string; paymentStatus:string; total:number; createdAt:string; items:{name:string;quantity:number;unitPrice:number}[] };
+export default function AccountOrdersPage(){
+ const router=useRouter(); const [customer,setCustomer]=useState<{name:string;email:string}|null>(null); const [orders,setOrders]=useState<Order[]>([]); const [loading,setLoading]=useState(true);
+ useEffect(()=>{fetch("/api/account",{cache:"no-store"}).then(async r=>{const d=await r.json();if(!d.customer){router.replace("/account");return;}setCustomer(d.customer);setOrders(d.orders||[]);}).catch(()=>router.replace("/account")).finally(()=>setLoading(false));},[router]);
+ async function signOut(){await fetch("/api/account",{method:"DELETE"});window.dispatchEvent(new CustomEvent("bite-riot-account-changed"));router.replace("/");router.refresh();}
+ return <main className="br-orders-page"><section className="br-orders-hero"><div className="wrap"><span className="eyebrow">THE BITE RIOT CLUB / MEMBER AREA</span><h1 className="display">YOUR<br/><em>ORDERS.</em></h1><p>{customer ? `Welcome back, ${customer.name}. Here's your order history.` : "Your personal order space."}</p></div></section><section className="section"><div className="wrap br-orders-wrap"><div className="br-orders-heading"><div><span className="eyebrow">YOUR ACCOUNT</span><h2>{customer?.email || "Loading your profile…"}</h2></div><button className="br-orders-signout" onClick={signOut}><LogOut size={15}/> Sign out</button></div>{loading?<p>Loading your orders…</p>:orders.length===0?<div className="br-orders-empty"><Package size={34}/><h2>NO ORDERS. <em>YET.</em></h2><p>Your next great meal belongs here.</p><Link className="btn" href="/menu">Explore the menu <ArrowUpRight size={16}/></Link></div>:<div className="br-order-list">{orders.map(order=><article className="br-order-card" key={order.reference}><div className="br-order-top"><div><small>ORDER REFERENCE</small><strong>{order.reference}</strong></div><span>{order.status.replaceAll("_"," ")}</span></div><p>{new Date(order.createdAt).toLocaleDateString()} · {order.items.reduce((n,x)=>n+x.quantity,0)} item(s)</p><ul>{order.items.map((item,i)=><li key={i}>{item.quantity} × {item.name} <span>{money(item.unitPrice*item.quantity)}</span></li>)}</ul><b className="br-order-total">TOTAL <strong>{money(order.total)}</strong></b><Link href={`/track?reference=${encodeURIComponent(order.reference)}`}>Track this order <ArrowUpRight size={15}/></Link></article>)}</div>}<Link className="br-orders-shop" href="/menu"><ShoppingBag size={16}/> Order something delicious</Link></div></section></main>;
+}

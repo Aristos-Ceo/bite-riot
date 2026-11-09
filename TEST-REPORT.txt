@@ -1,0 +1,22 @@
+BITE RIOT FINAL FIX PATCH — NOVEMBER 2026
+
+Implemented:
+- Corrected slideshow image sizing so real image elements cover the full hero.
+- Explicit hero, image, shade and content stacking for Home and Menu.
+- Seven contextual homepage slides; five rotating Menu category slides.
+- Menu page now always renders the complete 80-item supplied catalogue, merging live DB values where available rather than depending on the database query to show items.
+- Menu product cards are forced visible if the scroll-reveal observer does not initialize.
+- Our Story manifesto copy and supplied food image now sit together in a shared two-column layout.
+- Combo card lift, image zoom, and link hover treatments.
+- Combo page WhatsApp contact link for 09137902342.
+- Toast pop-ups for add-to-bag, quantity updates, account registration/sign-in and successful order requests.
+- Customer registration and sign-in API with scrypt password hashing and a signed, HTTP-only session cookie.
+- Account creation email notification support for itzavery57@gmail.com through Resend. Passwords are never emailed.
+- Added Customer model to Prisma schema. Run npm.cmd run db:push once before seeding.
+
+Validation:
+- All TypeScript/TSX source files passed TypeScript transpile/syntax parsing.
+- CSS brace counts are balanced.
+- All 117 unique image paths in the image map exist in the supplied public/images folder.
+- The fallback catalogue contains 80 products across all 8 menu categories.
+- Full Next.js typecheck/production build was not run in this environment because package installation could not complete (network timeout). Run the Windows setup commands in START-HERE-WINDOWS.txt after extracting.

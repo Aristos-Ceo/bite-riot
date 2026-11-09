@@ -1,0 +1,1101 @@
+@import url("https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,600;6..96,700;6..96,500&family=DM+Sans:wght@400;500;600;700;800&family=Syne:wght@500;600;700;800&display=swap");
+/* BITE RIOT image-led page upgrades */
+.br-menu-hero{position:relative;min-height:650px;display:flex;align-items:center;overflow:hidden;isolation:isolate;background:#102d22;color:var(--ivory,#f5f0e5)}
+.br-menu-hero-background,.br-menu-hero-shade{position:absolute;inset:0;z-index:0}
+.br-menu-hero-slide{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.035);transition:opacity 1.05s ease,transform 3s ease}
+.br-menu-hero-slide.is-active{opacity:1;transform:scale(1)}
+.br-menu-hero-shade{z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(8,27,19,.88),rgba(8,27,19,.58) 48%,rgba(8,27,19,.18)),linear-gradient(0deg,rgba(8,27,19,.35),transparent 55%)}
+.br-menu-hero-content{position:relative;z-index:2;padding-top:100px;padding-bottom:115px;max-width:1200px}
+.br-menu-hero-content .eyebrow{color:var(--lime,#b8e34a)}
+.br-menu-hero-kicker{margin:36px 0 8px;color:var(--lime,#b8e34a);font-size:11px;font-weight:900;letter-spacing:.2em}
+.br-menu-hero h1{max-width:900px;margin:0;font-size:clamp(65px,10vw,132px);line-height:.86;letter-spacing:-.065em}
+.br-menu-hero h1 em{color:var(--lime,#b8e34a);font-family:Fraunces,serif;font-weight:500}
+.br-menu-hero-description{max-width:480px;margin:24px 0 28px;color:#f2eee4;font-size:15px;line-height:1.8}
+.br-menu-hero-count{position:absolute;right:30px;bottom:46px;font-size:12px;font-weight:900;letter-spacing:.16em}
+.br-menu-hero-progress{position:absolute;bottom:0;left:0;right:0;display:flex;gap:4px;padding:0 0 0 0}
+.br-menu-hero-progress span{height:4px;flex:1;background:rgba(255,255,255,.25);transition:background .3s}
+.br-menu-hero-progress span.active{background:var(--lime,#b8e34a)}
+.br-menu-content{padding-top:78px}
+.br-menu-section-heading,.br-menu-toolbar,.br-offers-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:30px}
+.br-menu-section-heading h2,.br-menu-toolbar h2,.br-offers-heading h2{margin:12px 0 0;font-size:clamp(38px,5vw,68px);line-height:.95}
+.br-menu-section-heading h2 em,.br-menu-toolbar h2 em,.br-offers-heading h2 em{color:var(--botanical,#1d6042);font-family:Fraunces,serif;font-weight:500}
+.br-menu-section-heading>p,.br-menu-toolbar>p,.br-offers-heading>p{max-width:360px;color:var(--muted,#73766c);font-size:13px;line-height:1.8}
+.br-menu-category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin:28px 0 90px}
+.br-menu-category{position:relative;display:block;min-height:220px;padding:0;overflow:hidden;border:0;border-radius:20px;background:#183d2d;color:#fff;text-align:left;cursor:pointer;isolation:isolate}
+.br-menu-category:after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(0deg,rgba(5,23,15,.88),rgba(5,23,15,.04) 75%)}
+.br-menu-category img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .4s}
+.br-menu-category:hover img,.br-menu-category.is-active img{transform:scale(1.07);filter:saturate(1.12)}
+.br-menu-category-number{position:absolute;z-index:1;top:15px;left:16px;font-size:10px;font-weight:900;letter-spacing:.12em}
+.br-menu-category-copy{position:absolute;z-index:1;left:17px;right:45px;bottom:18px;display:grid;gap:6px}
+.br-menu-category-copy small{font-size:8px;font-weight:900;letter-spacing:.14em;color:var(--lime,#b8e34a)}
+.br-menu-category-copy b{font-family:Syne,sans-serif;font-size:clamp(16px,1.6vw,22px);line-height:1.05}
+.br-menu-category-arrow{position:absolute;z-index:1;right:15px;bottom:17px;width:32px;height:32px;display:grid;place-items:center;border:1px solid rgba(255,255,255,.6);border-radius:50%;transition:background .25s,color .25s,transform .25s}
+.br-menu-category:hover .br-menu-category-arrow,.br-menu-category.is-active .br-menu-category-arrow{background:var(--lime,#b8e34a);color:#153b2b;transform:translate(2px,2px)}
+.br-menu-toolbar{align-items:end;padding-top:18px}
+.br-menu-search{display:grid;gap:8px;width:min(390px,100%)}
+.br-menu-search>span{font-size:9px;font-weight:900;letter-spacing:.15em}
+.br-menu-search input{width:100%;min-height:48px;border:1px solid rgba(18,60,45,.2);border-radius:999px;padding:0 20px;background:#fff}
+.br-menu-sticky-nav{position:sticky;top:82px;z-index:10;display:flex;gap:8px;overflow-x:auto;padding:12px 0;background:rgba(245,240,229,.94);backdrop-filter:blur(14px);scrollbar-width:none}
+.br-menu-sticky-nav::-webkit-scrollbar{display:none}
+.br-menu-sticky-nav button{flex:0 0 auto;border:1px solid rgba(18,60,45,.18);border-radius:999px;padding:11px 17px;background:transparent;color:var(--forest,#123c2d);font-size:10px;font-weight:800;cursor:pointer;transition:background .2s,color .2s,transform .2s}
+.br-menu-sticky-nav button:hover{transform:translateY(-2px)}
+.br-menu-sticky-nav button.active{background:var(--forest,#123c2d);color:#fff}
+.br-menu-product-section{scroll-margin-top:145px;padding:62px 0 55px;border-bottom:1px solid rgba(18,60,45,.13)}
+.br-menu-product-heading{display:flex;justify-content:space-between;align-items:end;margin-bottom:25px}
+.br-menu-product-heading>div>span{color:var(--botanical,#1d6042);font-size:9px;font-weight:900;letter-spacing:.15em}
+.br-menu-product-heading h3{margin:8px 0 0;font-size:clamp(32px,4vw,52px);line-height:1}
+.br-menu-product-heading>span{font-size:11px;color:var(--muted,#73766c)}
+.br-product-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+.br-product-card .product-img{display:block;aspect-ratio:1.12/1;overflow:hidden;background:#e9e1d2}
+.br-product-card .product-img img{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.br-product-card:hover .product-img img{transform:scale(1.055)}
+.br-menu-no-results{padding:28px;border-radius:18px;background:#eee8dc;color:#536054}
+.br-combo-hero{position:relative;isolation:isolate;overflow:hidden;background:#0c2a1d;color:var(--ivory,#f5f0e5)}
+.br-combo-hero-image{position:absolute;inset:0;z-index:-1;background:url("/images/sections/burgers/burger-and-friends-sharing-a-meal.jpg") center/cover no-repeat;opacity:.42}
+.br-combo-hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(7,29,20,.95),rgba(7,29,20,.55) 65%,rgba(7,29,20,.2))}
+.br-combo-hero-content{position:relative;padding-top:105px;padding-bottom:95px}
+.br-combo-hero h1{max-width:900px;margin:25px 0;font-size:clamp(65px,10vw,128px);line-height:.85}
+.br-combo-hero h1 em{color:var(--lime,#b8e34a);font-family:Fraunces,serif}
+.br-combo-hero-content>p{max-width:490px;color:#f1eee5;font-size:15px;line-height:1.8}
+.br-combo-hero .eyebrow{color:var(--lime,#b8e34a)}
+.br-combo-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.br-combo-card{overflow:hidden;border-radius:22px;transition:transform .35s,box-shadow .35s}
+.br-combo-card:hover{transform:translateY(-7px);box-shadow:0 22px 50px rgba(20,40,27,.13)}
+.br-combo-card .combo-card-image{height:220px;overflow:hidden}
+.br-combo-card .combo-card-image img{width:100%;height:100%;object-fit:cover;transition:transform .65s}
+.br-combo-card:hover .combo-card-image img{transform:scale(1.06)}
+.br-build-combo{position:relative;overflow:hidden;background:#e9e2d4;padding:100px 0}
+.br-build-combo-grid{align-items:center}
+.br-build-visuals{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.br-build-visuals>div{position:relative;min-width:0;overflow:hidden;border-radius:18px;background:#fff;padding-bottom:17px}
+.br-build-visuals img{width:100%;height:190px;object-fit:cover}
+.br-build-visuals span{display:block;margin:14px 14px 6px;color:var(--botanical,#1d6042);font-size:10px;font-weight:900}
+.br-build-visuals b,.br-build-visuals small{display:block;margin:0 14px}
+.br-build-visuals b{font-family:Syne,sans-serif;font-size:14px}
+.br-build-visuals small{margin-top:6px;color:#6e756c;font-size:10px;line-height:1.5}
+.br-offers-hero{position:relative;isolation:isolate;overflow:hidden;min-height:510px;display:flex;align-items:center;background:#112f23;color:#fff}
+.br-offers-hero-image{position:absolute;inset:0;z-index:-1;background:url("/images/sections/chicken-wings/offers.jpg") center/cover no-repeat;opacity:.35}
+.br-offers-hero:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(8,29,20,.94),rgba(8,29,20,.55) 65%,rgba(8,29,20,.18))}
+.br-offers-hero .wrap{position:relative;padding-top:90px;padding-bottom:90px}
+.br-offers-hero .eyebrow{color:var(--lime,#b8e34a)}
+.br-offers-hero h1{margin:25px 0;font-size:clamp(62px,9vw,112px);line-height:.88}
+.br-offers-hero h1 em{color:var(--lime,#b8e34a);font-family:Fraunces,serif}
+.br-offers-hero p{max-width:460px;color:#e8eee5;font-size:15px;line-height:1.8}
+.br-offers-stamp{position:absolute;right:8%;bottom:90px;width:125px;height:125px;display:grid;place-content:center;border:1px solid rgba(255,255,255,.6);border-radius:50%;color:var(--lime,#b8e34a);font-size:10px;font-weight:900;line-height:1.6;text-align:center;transform:rotate(10deg)}
+.br-offers-content{background:#f5f0e5}
+.br-offers-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:45px}
+.br-offer-card{overflow:hidden;border-radius:22px;background:#123c2d;color:#fff}
+.br-offer-card.lime{background:#b8e34a;color:#173b2b}
+.br-offer-card.cream{background:#e6dece;color:#173b2b}
+.br-offer-image{position:relative;height:240px;overflow:hidden}
+.br-offer-image img{width:100%;height:100%;object-fit:cover;transition:transform .6s}
+.br-offer-card:hover .br-offer-image img{transform:scale(1.06)}
+.br-offer-image span{position:absolute;top:14px;left:16px;color:#fff;font-size:11px;font-weight:900}
+.br-offer-copy{padding:25px}
+.br-offer-copy small{font-size:9px;font-weight:900;letter-spacing:.15em}
+.br-offer-copy h3{margin:13px 0;font-family:Syne,sans-serif;font-size:clamp(23px,2.5vw,34px);line-height:.98}
+.br-offer-copy p{min-height:70px;font-size:12px;line-height:1.7;opacity:.82}
+.br-offer-copy .btn{margin-top:12px}
+.br-offers-note{display:flex;gap:20px;align-items:flex-start;margin-top:38px;padding:24px;border:1px solid rgba(18,60,45,.17);border-radius:18px}
+.br-offers-note>span{color:var(--botanical,#1d6042);font-size:28px}
+.br-offers-note b{font-size:10px;letter-spacing:.12em}
+.br-offers-note p{max-width:850px;margin:8px 0 0;color:#687166;font-size:12px;line-height:1.7}
+.br-story-gallery .editorial-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:18px;margin-top:38px}
+.br-story-gallery .editorial-shot{grid-column:span 4;min-width:0}
+.br-story-gallery .editorial-shot.large{grid-column:span 8}
+.br-story-gallery .editorial-shot.tall{grid-column:span 4}
+.br-story-gallery .editorial-shot-img{position:relative;height:300px;overflow:hidden;border-radius:20px;background:#e8e0d2}
+.br-story-gallery .editorial-shot.large .editorial-shot-img{height:370px}
+.br-story-gallery .editorial-shot.tall .editorial-shot-img{height:370px}
+.br-story-gallery .editorial-shot-img img{width:100%;height:100%;object-fit:cover;transition:transform .7s}
+.br-story-gallery .editorial-shot:hover .editorial-shot-img img{transform:scale(1.045)}
+.br-story-gallery .shot-caption{display:flex;justify-content:space-between;gap:10px;padding:12px 2px}
+.br-story-gallery .shot-caption b{font-family:Syne,sans-serif;font-size:13px}
+.br-story-gallery .shot-caption span{color:#73766c;font-size:8px;font-weight:800;letter-spacing:.1em}
+@media(max-width:1000px){.br-menu-category-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.br-product-grid,.br-combo-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.br-offers-grid{grid-template-columns:1fr 1fr}.br-offer-card:last-child{grid-column:1/-1}.br-offer-card:last-child .br-offer-image{height:280px}}
+@media(max-width:700px){.br-menu-hero{min-height:590px}.br-menu-hero-content{padding-top:75px;padding-bottom:90px}.br-menu-hero-description{font-size:13px}.br-menu-section-heading,.br-menu-toolbar,.br-offers-heading{display:block}.br-menu-section-heading>p,.br-menu-toolbar>p,.br-offers-heading>p{margin-top:15px}.br-menu-category-grid{gap:9px;margin-bottom:55px}.br-menu-category{min-height:170px;border-radius:15px}.br-menu-category-copy{left:12px;bottom:13px}.br-menu-category-copy b{font-size:15px}.br-menu-category-number{top:12px;left:12px}.br-menu-sticky-nav{top:65px}.br-menu-product-section{scroll-margin-top:120px;padding:42px 0}.br-product-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.br-product-card .product-img{aspect-ratio:1/1}.br-menu-product-heading h3{font-size:30px}.br-combo-hero-content{padding-top:75px;padding-bottom:75px}.br-combo-grid{grid-template-columns:1fr 1fr;gap:11px}.br-combo-card .combo-card-image{height:160px}.br-combo-card .combo-card-copy{padding:15px}.br-build-combo{padding:70px 0}.br-build-visuals{grid-template-columns:1fr;gap:12px;margin-top:25px}.br-build-visuals>div{display:grid;grid-template-columns:110px 1fr;grid-template-rows:auto auto;align-items:center;padding:0 12px 0 0}.br-build-visuals img{grid-row:1/4;width:110px;height:110px}.br-build-visuals span{margin:0 12px}.br-build-visuals b,.br-build-visuals small{margin:4px 12px}.br-offers-hero{min-height:470px}.br-offers-stamp{right:18px;bottom:30px;width:85px;height:85px;font-size:8px}.br-offers-grid{grid-template-columns:1fr}.br-offer-card:last-child{grid-column:auto}.br-offer-image,.br-offer-card:last-child .br-offer-image{height:220px}.br-story-gallery .editorial-gallery{grid-template-columns:1fr 1fr;gap:12px}.br-story-gallery .editorial-shot,.br-story-gallery .editorial-shot.large,.br-story-gallery .editorial-shot.tall{grid-column:span 1}.br-story-gallery .editorial-shot-img,.br-story-gallery .editorial-shot.large .editorial-shot-img,.br-story-gallery .editorial-shot.tall .editorial-shot-img{height:210px}.br-story-gallery .shot-caption{display:block}.br-story-gallery .shot-caption span{display:block;margin-top:5px}}
+@media(max-width:420px){.br-menu-category-grid{grid-template-columns:1fr 1fr}.br-product-grid{grid-template-columns:1fr 1fr}.br-combo-grid{grid-template-columns:1fr}.br-combo-card .combo-card-image{height:210px}.br-menu-sticky-nav button{padding:9px 13px;font-size:9px}}
+@media(prefers-reduced-motion:reduce){.br-menu-hero-slide,.br-menu-category img,.br-combo-card,.br-combo-card img,.br-offer-image img,.br-story-gallery .editorial-shot-img img{transition:none}}
+
+
+/* MENU IMAGE VISIBILITY FIX â€” ensure every menu photo fills its frame cleanly */
+.br-product-card .product-img{position:relative;display:block;width:100%;aspect-ratio:1.12/1;overflow:hidden;border-radius:18px;background:#e9e1d2;isolation:isolate}
+.br-product-card .product-img img{position:absolute;inset:0;display:block;width:100%;height:100%;min-width:100%;min-height:100%;max-width:none;object-fit:cover;object-position:50% 50%;}
+.br-product-card .product-img .product-view{z-index:2}
+.br-menu-category{border-radius:20px}
+.br-menu-category img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+@media(max-width:760px){.br-product-card .product-img{aspect-ratio:1/1;border-radius:15px}}
+
+
+/* ================================================================
+   BITE RIOT CREATIVE DIRECTION â€” typography, cinematic hero motion,
+   image-led editorial layouts and tactile interactions.
+   Menu page layout remains unchanged; only requested title typography
+   and the product-image visibility correction are applied there.
+   ================================================================ */
+:root{--br-ink:#252b22;--br-forest:#123c2d;--br-botanical:#1d6042;--br-lime:#b8e34a;--br-ivory:#f5f0e5;--br-sand:#d8c9ae}
+body{font-family:"DM Sans",Arial,sans-serif}
+.display,h1,h2,h3,.br-offer-copy h3,.br-build-visuals b{font-family:"Syne",Arial,sans-serif;letter-spacing:-.055em}
+.display em,h1 em,h2 em,h3 em{font-family:"Bodoni Moda",Georgia,serif;font-weight:600;letter-spacing:-.045em}
+.eyebrow,.br-hero-bottomline,.br-menu-toolbar label,.br-offer-copy small{font-family:"Syne",Arial,sans-serif}
+
+/* Shared cinematic 1.5-second hero background crossfade */
+.br-hero-slideshow{position:absolute;inset:0;z-index:0;overflow:hidden;background:#102d22}
+.br-hero-slide{position:absolute;inset:-1.5%;display:block;width:103%;height:103%;object-fit:cover;object-position:center 48%;opacity:0;transform:scale(1.045);filter:saturate(.98);transition:opacity 1.35s cubic-bezier(.22,.61,.36,1),transform 5s ease;will-change:opacity,transform}
+.br-hero-slide.is-active{opacity:1;transform:scale(1)}
+.br-hero-slideshow-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,25,17,.91) 0%,rgba(7,25,17,.76) 42%,rgba(7,25,17,.34) 100%),linear-gradient(0deg,rgba(7,25,17,.48),transparent 58%)}
+.br-hero-background-mode{position:relative;isolation:isolate;overflow:hidden;background:#102d22}
+.br-hero-background-mode .br-hero-layout,.br-hero-background-mode .br-hero-bottomline{position:relative;z-index:2}
+.br-hero-background-mode .br-hero-layout{min-height:640px;align-items:center}
+.br-hero-background-mode .br-hero-product{display:none!important}
+.br-hero-background-mode .br-hero-copy{max-width:790px;padding-top:85px;padding-bottom:105px}
+.br-hero-background-mode .br-hero-title{font-size:clamp(86px,13vw,178px);line-height:.78;letter-spacing:-.09em;text-shadow:0 8px 35px rgba(0,0,0,.15)}
+.br-hero-background-mode .br-hero-title em{color:var(--br-lime);font-family:"Bodoni Moda",serif;font-style:italic}
+.br-hero-background-mode .br-hero-feature-copy{max-width:510px;margin:24px 0 0;animation:br-copy-in .8s both}
+.br-hero-background-mode .br-hero-feature-copy>span{display:block;color:var(--br-lime);font:800 11px "Syne",sans-serif;letter-spacing:.18em}
+.br-hero-background-mode .br-hero-feature-copy p{max-width:500px;color:#f4f0e8;font-size:15px;line-height:1.8}
+.br-hero-side-note{position:absolute;right:3%;bottom:23%;width:min(270px,26%);padding:22px;border:1px solid rgba(255,255,255,.32);border-radius:20px;background:rgba(13,43,30,.38);backdrop-filter:blur(12px);color:#fff;display:grid;gap:9px}
+.br-hero-side-note span,.br-hero-side-note small{font-size:9px;font-weight:800;letter-spacing:.15em;color:var(--br-lime)}
+.br-hero-side-note strong{font:700 clamp(18px,2vw,27px) "Syne",sans-serif;line-height:1.05}
+.br-hero-side-note small{color:#f4f0e8;font-size:8px;line-height:1.6}
+.br-hero-background-mode .br-hero-bottomline{z-index:2}
+
+/* Other page heroes share the same slideshow component and timing */
+.br-combo-hero,.br-offers-hero,.story-hero{position:relative;isolation:isolate;overflow:hidden}
+.br-combo-hero>.br-hero-slideshow,.br-offers-hero>.br-hero-slideshow,.story-hero>.br-hero-slideshow{z-index:0}
+.br-combo-hero>.br-hero-slideshow .br-hero-slideshow-shade{background:linear-gradient(90deg,rgba(7,25,17,.93),rgba(7,25,17,.68) 55%,rgba(7,25,17,.32)),linear-gradient(0deg,rgba(7,25,17,.4),transparent 60%)}
+.br-combo-hero-content,.br-offers-hero>.wrap,.story-hero-content{position:relative;z-index:2}
+.br-combo-hero-image,.br-offers-hero-image,.story-hero-image{display:none!important}
+.br-combo-hero-content{padding-top:112px;padding-bottom:110px}
+.br-combo-hero h1,.br-offers-hero h1,.story-hero h1{font-family:"Syne",sans-serif;letter-spacing:-.075em}
+.br-combo-hero h1 em,.br-offers-hero h1 em,.story-hero h1 em{font-family:"Bodoni Moda",serif;font-style:italic;font-weight:600}
+.br-offers-hero{min-height:560px}
+.br-offers-hero>.wrap{width:min(1200px,calc(100% - 48px))}
+.story-hero{background:#102d22}
+.story-hero-content{padding-top:105px;padding-bottom:105px}
+
+/* Editorial typography for the two requested product detail titles */
+.br-product-detail-title{font-family:"Bodoni Moda",Georgia,serif!important;font-weight:600!important;letter-spacing:-.055em!important;line-height:.98!important}
+.br-title-fresh-lemonade{font-family:"Bodoni Moda",Georgia,serif!important;font-size:clamp(48px,6vw,82px)!important;font-weight:600!important;font-style:italic!important;color:var(--br-forest)}
+.br-title-cheese-please{font-family:"Syne",Arial,sans-serif!important;font-size:clamp(48px,6vw,82px)!important;font-weight:800!important;letter-spacing:-.075em!important;color:var(--br-forest)}
+/* Menu design is intentionally preserved; typography-only enhancement for the named heading. */
+.br-menu-toolbar .display{font-family:"Syne",Arial,sans-serif;letter-spacing:-.065em}
+.br-menu-toolbar .display em{font-family:"Bodoni Moda",Georgia,serif;font-style:italic}
+
+/* Combos: editorial intro photo, elevated cards and pyramid image composition */
+.combo-intro{background:#f5f0e5}
+.combo-intro-grid{display:grid;grid-template-columns:1fr 1fr minmax(220px,.85fr);gap:34px;align-items:center}
+.combo-intro-grid>div:nth-child(2)>p{font-size:15px;line-height:1.85;color:#50594e}
+.br-combo-intro-detail{margin-top:22px;padding:15px 18px;border-left:3px solid var(--br-lime);background:#e9e2d4;display:grid;gap:5px}
+.br-combo-intro-detail span{font:800 9px "Syne",sans-serif;letter-spacing:.16em;color:var(--br-botanical)}
+.br-combo-intro-detail b{font:700 13px "Syne",sans-serif;color:var(--br-forest)}
+.br-combo-intro-photo{position:relative;min-width:0;height:260px;overflow:hidden;border-radius:26px;box-shadow:0 22px 50px rgba(22,45,31,.15)}
+.br-combo-intro-photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.br-combo-intro-photo:hover img{transform:scale(1.06)}
+.br-combo-intro-photo span{position:absolute;left:14px;right:14px;bottom:14px;padding:12px 14px;border-radius:12px;background:rgba(18,60,45,.84);color:#fff;font:800 9px "Syne",sans-serif;letter-spacing:.13em}
+.br-combo-card{background:#fff;box-shadow:0 10px 32px rgba(20,40,27,.07)}
+.br-combo-card .combo-card-image{position:relative;border-radius:0 0 20px 20px}
+.br-combo-card .combo-card-image img{display:block;border-radius:0 0 20px 20px}
+.br-combo-card .combo-card-copy{padding:23px}
+.br-combo-card .combo-card-copy h3{font-family:"Bodoni Moda",Georgia,serif;font-size:clamp(25px,2.7vw,34px);font-weight:600;letter-spacing:-.04em}
+.br-combo-card .combo-card-copy p{font-size:12px;line-height:1.8}
+.br-combo-card .combo-includes{font:800 9px "Syne",sans-serif;letter-spacing:.08em}
+.br-combo-card .combo-link{display:flex;justify-content:space-between;align-items:center;margin-top:18px;padding-top:14px;border-top:1px solid rgba(18,60,45,.15);font:800 10px "Syne",sans-serif;letter-spacing:.08em}
+.br-combo-card .combo-card-image a{display:block;width:100%;height:100%}
+.br-build-combo{background:linear-gradient(135deg,#e9e2d4 0%,#f5f0e5 55%,#d8c9ae 100%)}
+.br-build-combo-grid{display:grid;grid-template-columns:.85fr 1.35fr;gap:55px;align-items:center}
+.br-build-combo-grid>div:first-child h2{font-size:clamp(48px,6vw,78px);line-height:.9}
+.br-build-combo-grid>div:first-child p{max-width:420px;line-height:1.85;color:#596257}
+.br-build-pyramid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:16px;align-items:end}
+.br-build-pyramid>div{box-shadow:0 14px 35px rgba(26,47,32,.1);border-radius:22px;background:#fff}
+.br-build-pyramid>div:nth-child(1){grid-column:2/6;transform:translateY(0)}
+.br-build-pyramid>div:nth-child(2){grid-column:1/4;transform:translateY(-8px)}
+.br-build-pyramid>div:nth-child(3){grid-column:4/7;transform:translateY(-8px)}
+.br-build-pyramid>div:nth-child(1) img{height:220px}
+.br-build-pyramid>div:nth-child(2) img,.br-build-pyramid>div:nth-child(3) img{height:165px}
+.br-build-pyramid img{display:block;width:100%;object-fit:cover;border-radius:18px}
+.br-build-pyramid b{font-family:"Syne",sans-serif;font-size:14px}
+
+/* Offers: richer editorial cards and clear, truthful action details */
+.br-offers-content{padding-top:100px;padding-bottom:100px}
+.br-offers-heading h2{font-size:clamp(48px,7vw,88px);line-height:.9}
+.br-offers-grid{align-items:stretch;gap:22px}
+.br-offer-card{position:relative;box-shadow:0 15px 40px rgba(19,47,33,.12);transition:transform .35s,box-shadow .35s}
+.br-offer-card:hover{transform:translateY(-8px);box-shadow:0 25px 55px rgba(19,47,33,.18)}
+.br-offer-image{height:270px}
+.br-offer-image img{border-radius:0 0 22px 22px}
+.br-offer-copy{padding:28px 27px 30px}
+.br-offer-copy h3{font-family:"Bodoni Moda",Georgia,serif;font-size:clamp(26px,3vw,39px);font-weight:600;letter-spacing:-.04em;line-height:1.02}
+.br-offer-copy p{min-height:86px;font-size:13px;line-height:1.85}
+.br-offer-copy .btn{min-height:48px;transition:letter-spacing .3s,transform .3s}
+.br-offer-copy .btn:hover{letter-spacing:.08em;transform:translateY(-2px)}
+.br-offers-note{background:rgba(255,255,255,.48);padding:28px;border-radius:22px}
+
+/* Story: image-led manifesto and three distinct belief panels */
+.manifesto{position:relative;overflow:hidden;background:#f5f0e5}
+.manifesto-grid{gap:70px;align-items:center}
+.manifesto-grid>div:first-child h2{font-size:clamp(56px,8vw,104px);line-height:.84}
+.manifesto-grid>div:nth-child(2){max-width:570px}
+.manifesto-lead{font-family:"Bodoni Moda",Georgia,serif;font-size:clamp(24px,3vw,36px)!important;line-height:1.25!important;color:var(--br-forest)!important}
+.manifesto-grid>div:nth-child(2)>p:not(.manifesto-lead){font-size:14px;line-height:1.9;color:#5c645a}
+.br-story-values{position:relative;overflow:hidden;padding:110px 0;background:#123c2d;color:#f5f0e5}
+.br-story-values .values-layout{display:grid;grid-template-columns:.9fr 1.25fr;gap:70px;align-items:start}
+.br-values-intro{position:sticky;top:110px}
+.br-values-intro .eyebrow{color:var(--br-lime)}
+.br-values-intro h2{font-size:clamp(60px,8vw,105px);line-height:.83}
+.br-values-intro h2 em{color:var(--br-lime)}
+.br-values-intro>p{max-width:350px;color:#d9e0d4;font-size:14px;line-height:1.8}
+.br-values-intro img{width:100%;height:210px;margin-top:28px;object-fit:cover;border-radius:22px}
+.br-story-values .value-list{display:grid;gap:15px}
+.br-story-values .value-list article{position:relative;display:grid;grid-template-columns:64px 1fr;gap:20px;align-items:start;padding:30px;border:1px solid rgba(245,240,229,.22);border-radius:24px;background:rgba(255,255,255,.055);transition:transform .35s,background .35s,border-color .35s}
+.br-story-values .value-list article:hover{transform:translateX(8px);background:rgba(255,255,255,.1);border-color:rgba(184,227,74,.55)}
+.br-story-values .value-list article>span{display:grid;place-items:center;width:52px;height:52px;border-radius:50%;background:var(--br-lime);color:var(--br-forest);font:800 14px "Syne",sans-serif}
+.br-story-values .value-list article small{color:var(--br-lime);font:800 9px "Syne",sans-serif;letter-spacing:.16em}
+.br-story-values .value-list article h3{margin:9px 0;font:600 clamp(23px,3vw,35px) "Bodoni Moda",Georgia,serif;letter-spacing:-.025em}
+.br-story-values .value-list article p{max-width:510px;margin:0;color:#d9e0d4;font-size:13px;line-height:1.8}
+
+/* Home mood cards become the image-led quality benchmark across the site */
+.br-craving-image-cards{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.br-craving-image-cards a{position:relative;isolation:isolate;min-height:310px;overflow:hidden;border-radius:24px;background:#123c2d;color:#fff;display:flex;flex-direction:column;justify-content:flex-end;padding:22px;transition:transform .35s,box-shadow .35s}
+.br-craving-image-cards a:hover{transform:translateY(-8px);box-shadow:0 22px 45px rgba(20,40,27,.2)}
+.br-craving-image-cards a:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(0deg,rgba(7,24,16,.88),rgba(7,24,16,.05) 78%)}
+.br-craving-image-cards img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;transition:transform .75s cubic-bezier(.2,.7,.2,1)}
+.br-craving-image-cards a:hover img{transform:scale(1.07)}
+.br-craving-image-cards a>span{position:absolute;top:18px;left:18px;font:800 10px "Syne",sans-serif;color:var(--br-lime)}
+.br-craving-image-cards b{font:700 clamp(20px,2.2vw,29px) "Bodoni Moda",Georgia,serif;line-height:1.08;letter-spacing:-.02em}
+.br-craving-image-cards i{position:absolute;right:20px;bottom:22px;font-style:normal;font-size:20px;color:var(--br-lime)}
+
+/* Home sections: richer photography, quote treatment and accordion */
+.home-story{background:#e9e2d4;gap:7vw;padding-top:100px;padding-bottom:100px}
+.home-story-images{border-radius:28px;overflow:hidden}
+.home-story-main,.home-story-small{border-radius:22px;object-fit:cover}
+.home-story-copy h2{font-size:clamp(54px,7vw,90px);line-height:.86}
+.home-story-copy h2 em{color:var(--br-botanical)}
+.home-story-copy p{max-width:530px;font-size:14px;line-height:1.9}
+.company-grid{align-items:stretch;gap:18px}
+.company-photo,.company-quote{min-height:370px;overflow:hidden;border-radius:24px}
+.company-photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.company-photo:hover img{transform:scale(1.06)}
+.company-quote{position:relative;isolation:isolate;display:grid;place-items:stretch;background:#123c2d;color:#fff}
+.company-quote>img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;opacity:.28}
+.company-quote:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(145deg,rgba(18,60,45,.85),rgba(18,60,45,.96))}
+.company-quote-copy{display:flex;flex-direction:column;justify-content:center;padding:35px}
+.company-quote .quote-mark{color:var(--br-lime);font:700 70px "Bodoni Moda",serif;line-height:.6}
+.company-quote p{max-width:420px;font:600 clamp(26px,3.2vw,39px) "Bodoni Moda",Georgia,serif;line-height:1.2}
+.company-quote small{font:800 9px "Syne",sans-serif;letter-spacing:.16em;color:var(--br-lime)}
+.company-quote-markline{margin-top:35px;padding-top:15px;border-top:1px solid rgba(255,255,255,.28);font:800 8px "Syne",sans-serif;letter-spacing:.18em}
+.faq-item{border-bottom:1px solid rgba(18,60,45,.2);transition:background .25s}
+.faq-item summary{padding:23px 4px;font:700 16px "Syne",sans-serif;letter-spacing:-.025em}
+.faq-item summary span{color:var(--br-botanical);font-size:10px;margin-right:18px}
+.faq-item summary b{display:grid;place-items:center;width:30px;height:30px;border-radius:50%;background:#e5dece;color:var(--br-forest);transition:transform .3s,background .3s}
+.faq-item[open] summary b{transform:rotate(45deg);background:var(--br-lime)}
+.faq-item>p{padding:0 35px 20px;color:#687166;font-size:13px;line-height:1.8}
+
+/* Reveal and tactile interaction polish */
+.btn,.text-link,.combo-link{transition:transform .3s ease,letter-spacing .3s ease,box-shadow .3s ease}
+.btn:hover,.text-link:hover,.combo-link:hover{letter-spacing:.045em}
+.category-card,.product,.br-offer-card,.editorial-shot{transition:transform .35s ease,box-shadow .35s ease}
+.br-product-card .product-img,.category-card img,.editorial-shot-img{border-radius:20px;overflow:hidden}
+.br-product-card .product-img img{transition:transform .7s cubic-bezier(.2,.7,.2,1)}
+.br-product-card:hover .product-img img{transform:scale(1.05) rotate(.5deg)}
+@keyframes br-copy-in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+
+@media(max-width:1050px){.combo-intro-grid{grid-template-columns:1fr 1fr}.br-combo-intro-photo{grid-column:1/-1;height:280px}.br-craving-image-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.br-build-combo-grid{gap:32px}}
+@media(max-width:760px){.br-hero-background-mode .br-hero-layout{min-height:640px}.br-hero-background-mode .br-hero-copy{padding-top:80px;padding-bottom:95px}.br-hero-background-mode .br-hero-title{font-size:clamp(78px,19vw,130px)}.br-hero-side-note{right:18px;bottom:88px;width:150px;padding:13px}.br-hero-side-note strong{font-size:16px}.br-hero-side-note small{font-size:7px}.br-hero-background-mode .br-hero-feature-copy{max-width:90%}.br-hero-background-mode .br-hero-feature-copy p{font-size:13px}.br-combo-hero-content,.story-hero-content{padding-top:80px;padding-bottom:85px}.combo-intro-grid{grid-template-columns:1fr;gap:20px}.br-combo-intro-photo{grid-column:auto;height:220px}.br-build-combo-grid{grid-template-columns:1fr;gap:28px}.br-build-pyramid{grid-template-columns:1fr;gap:13px}.br-build-pyramid>div:nth-child(1),.br-build-pyramid>div:nth-child(2),.br-build-pyramid>div:nth-child(3){grid-column:auto;transform:none}.br-build-pyramid>div:nth-child(1) img,.br-build-pyramid>div:nth-child(2) img,.br-build-pyramid>div:nth-child(3) img{height:190px}.br-story-values .values-layout{grid-template-columns:1fr;gap:35px}.br-values-intro{position:relative;top:auto}.br-values-intro img{max-width:460px}.br-story-values .value-list article{padding:22px;grid-template-columns:48px 1fr;gap:13px}.br-story-values .value-list article>span{width:42px;height:42px}.br-craving-image-cards a{min-height:240px;padding:17px}.company-photo,.company-quote{min-height:280px}.company-quote-copy{padding:25px}.br-offers-content{padding-top:70px;padding-bottom:70px}}
+@media(max-width:480px){.br-craving-image-cards{gap:10px}.br-craving-image-cards a{min-height:205px;padding:14px;border-radius:18px}.br-craving-image-cards b{font-size:19px}.br-hero-side-note{display:none}.br-hero-background-mode .br-hero-copy{max-width:100%}.br-hero-background-mode .br-hero-feature-copy{max-width:100%}.br-combo-intro-photo{height:190px}.br-story-values .value-list article h3{font-size:23px}}
+@media(prefers-reduced-motion:reduce){.br-hero-slide,.br-craving-image-cards img,.br-combo-card,.br-offer-card,.br-product-card .product-img img{transition:none!important;animation:none!important}.br-hero-slide{opacity:0}.br-hero-slide.is-active{opacity:1}}
+
+/* Product names called out for custom editorial display styling */
+.br-product-card a[href="/menu/riot-cola"],.br-product-card a[href="/menu/brownie-riot"],.br-product-card a[href="/menu/fresh-lemonade"]{font-family:"Bodoni Moda",Georgia,serif;font-weight:600;letter-spacing:-.035em}.br-product-card a[href="/menu/cheese-please"]{font-family:"Syne",Arial,sans-serif;font-weight:800;letter-spacing:-.06em}
+.br-manifesto-image{position:relative;align-self:stretch;min-height:390px;overflow:hidden;border-radius:28px;box-shadow:0 24px 55px rgba(20,40,27,.14)}
+.br-manifesto-image img{width:100%;height:100%;min-height:390px;object-fit:cover;transition:transform .8s}
+.br-manifesto-image:hover img{transform:scale(1.05)}
+.br-manifesto-image span{position:absolute;left:16px;right:16px;bottom:16px;padding:13px 15px;border-radius:12px;background:rgba(18,60,45,.88);color:#fff;font:800 9px "Syne",sans-serif;letter-spacing:.14em}
+.manifesto-grid{grid-template-columns:.9fr .9fr 1.2fr;gap:48px}
+@media(max-width:900px){.manifesto-grid{grid-template-columns:1fr 1fr}.br-manifesto-image{grid-column:1/-1;min-height:280px}.br-manifesto-image img{min-height:280px}}
+@media(max-width:620px){.manifesto-grid{grid-template-columns:1fr}.br-manifesto-image{grid-column:auto;min-height:230px}.br-manifesto-image img{min-height:230px}}
+
+.br-offer-meta{margin:16px 0 4px;padding:12px 0;border-top:1px solid rgba(255,255,255,.2);font:800 8px "Syne",sans-serif;letter-spacing:.12em;line-height:1.6;opacity:.78}
+.br-offer-card.cream .br-offer-meta,.br-offer-card.lime .br-offer-meta{border-color:rgba(18,60,45,.2)}
+/* Preserve the approved Menu page typography except the explicitly requested
+   Full Lineup heading and the two named product detail titles. */
+.br-menu-page .display,.br-menu-page h1,.br-menu-page h2,.br-menu-page h3{font-family:"Syne",Arial,sans-serif;letter-spacing:inherit}
+.br-menu-page .display em,.br-menu-page h1 em,.br-menu-page h2 em,.br-menu-page h3 em{font-family:Fraunces,Georgia,serif;font-weight:500}
+.br-menu-page .br-menu-toolbar .display{font-family:"Syne",Arial,sans-serif;letter-spacing:-.065em}
+.br-menu-page .br-menu-toolbar .display em{font-family:"Bodoni Moda",Georgia,serif;font-style:italic;font-weight:600}
+/* Existing Reveal + ScrollMotion components now receive the requested pop-up
+   reveal, staggered child timing and scale treatment. Content stays visible
+   when JavaScript is unavailable. */
+body.motion-ready .reveal:not(.is-visible){opacity:0;transform:translateY(30px) scale(.95)}
+body.motion-ready .reveal.is-visible{opacity:1;transform:translateY(0) scale(1)}
+body.motion-ready .reveal.is-visible>*{animation:br-stagger-in .72s cubic-bezier(.2,.7,.2,1) both}
+body.motion-ready .reveal.is-visible>*:nth-child(2){animation-delay:90ms}
+body.motion-ready .reveal.is-visible>*:nth-child(3){animation-delay:170ms}
+body.motion-ready .reveal.is-visible>*:nth-child(4){animation-delay:240ms}
+body.motion-ready .motion-item:not(.motion-in){opacity:0;transform:translateY(24px) scale(.985)}
+body.motion-ready .motion-item.motion-in{opacity:1;transform:translateY(0) scale(1);transition:opacity .75s cubic-bezier(.2,.7,.2,1),transform .75s cubic-bezier(.2,.7,.2,1)}
+@keyframes br-stagger-in{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){body.motion-ready .reveal,body.motion-ready .reveal:not(.is-visible),body.motion-ready .motion-item:not(.motion-in){opacity:1;transform:none;animation:none!important;transition:none!important}}
+
+/* Final homepage and Story corrections */
+.br-story-values .br-values-intro > .eyebrow,
+.br-story-values .br-values-intro h2,
+.br-story-values .br-values-intro h2 em { color: #fff !important; }
+.br-story-values .br-values-intro h2 em { font-style: italic; }
+.br-story-values .br-values-intro > p { color: #f1f2ec; }
+.br-story-values .value-list article h3 { color: #fff; }
+.br-craving-image-cards a { min-height: 340px; }
+.br-craving-image-cards a b { max-width: 90%; color: #fff; text-shadow: 0 2px 14px rgba(0,0,0,.38); }
+.br-product-card .product-img { border-radius: 20px; }
+.br-product-card .product-img img { border-radius: inherit; }
+.discovery-image-wrap, .discovery-option img { border-radius: 22px; }
+.discovery-tabs button { transition: color .25s ease, background .25s ease, transform .25s ease; }
+.discovery-tabs button.active { background: var(--br-forest, #123c2d); color: #fff; }
+@media (max-width: 900px) {
+  .br-craving-image-cards { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 520px) {
+  .br-craving-image-cards { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .br-craving-image-cards a { min-height: 245px; padding: 15px; border-radius: 17px; }
+  .br-craving-image-cards a b { font-size: 19px; }
+  .br-story-values { padding: 76px 0; }
+  .br-story-values .values-layout { grid-template-columns: 1fr; gap: 30px; }
+  .br-values-intro { position: static; }
+  .br-story-values .value-list article { grid-template-columns: 48px 1fr; gap: 12px; padding: 20px; }
+  .br-story-values .value-list article > span { width: 42px; height: 42px; }
+}
+/* Give the four mood cards individual art direction while keeping one row on desktop. */
+.br-craving-image-cards a:nth-child(1) { min-height: 360px; }
+.br-craving-image-cards a:nth-child(2) { justify-content: center; background: #1d6042; }
+.br-craving-image-cards a:nth-child(2):after { background: linear-gradient(90deg,rgba(7,24,16,.84),rgba(7,24,16,.12)); }
+.br-craving-image-cards a:nth-child(2) b { max-width: 82%; }
+.br-craving-image-cards a:nth-child(3) { justify-content: flex-start; }
+.br-craving-image-cards a:nth-child(3):after { background: linear-gradient(180deg,rgba(7,24,16,.58),rgba(7,24,16,.08) 45%,rgba(7,24,16,.78)); }
+.br-craving-image-cards a:nth-child(3) b { margin-top: auto; }
+.br-craving-image-cards a:nth-child(4) { justify-content: center; background: #252b22; }
+.br-craving-image-cards a:nth-child(4):after { background: linear-gradient(0deg,rgba(7,24,16,.82),rgba(7,24,16,.18) 65%,rgba(7,24,16,.45)); }
+@media (max-width: 900px) {
+  .br-craving-image-cards a:nth-child(n) { min-height: 300px; }
+}
+@media (max-width: 520px) {
+  .br-craving-image-cards a:nth-child(n) { min-height: 245px; }
+}
+
+/* Final editorial finish: the approved BITE RIOT type system and custom stickers. */
+:root{--br-forest:#123c2d;--br-botanical:#1d6042;--br-lime:#b8e34a;--br-ivory:#f5f0e5;--br-sand:#d8c9ae;--br-charcoal:#252b22}
+body{font-family:"DM Sans",Arial,sans-serif}
+.display,.product-info h3,.combo-card-copy h3,.navlinks{font-family:"Syne",Arial,sans-serif}
+.display em,.editorial,.quote{font-family:"Bodoni Moda",Georgia,serif}
+.product-info h3{font-size:clamp(17px,1.5vw,21px);font-weight:800;letter-spacing:-.045em;line-height:1.08}
+.product-info h3 a{color:var(--br-forest)}
+.product-info p{font-family:"DM Sans",Arial,sans-serif;line-height:1.7}
+.product-img,.br-product-card .product-img{border-radius:20px;overflow:hidden}
+.product-img img,.br-product-card .product-img img{display:block;width:100%;height:100%;object-fit:cover;object-position:center}
+.br-menu-page .br-menu-toolbar .display{font-family:"Syne",Arial,sans-serif}
+.br-menu-page .br-menu-toolbar .display em{font-family:"Bodoni Moda",Georgia,serif}
+
+/* Original hand-drawn food characters: used as small brand stickers, not stock art. */
+.br-brand-sticker-art{display:block;width:100%;height:100%;overflow:visible;filter:drop-shadow(0 8px 12px rgba(13,39,25,.18))}
+.br-feature-sticker,.br-story-sticker,.br-company-sticker,.br-manifesto-sticker,.br-combo-sticker,.br-offers-sticker,.br-menu-sticker{z-index:4;pointer-events:none;padding:7px;border:4px solid #fff;border-radius:42% 58% 48% 52%;background:var(--br-ivory);box-shadow:0 12px 28px rgba(11,37,24,.18)}
+.feature-copy,.home-story-copy,.company-quote-copy,.br-manifesto-heading{position:relative}
+.br-feature-sticker{position:absolute;right:2%;top:-20px;width:104px;height:104px;transform:rotate(11deg)}
+.br-story-sticker{position:absolute;right:0;top:-34px;width:92px;height:92px;transform:rotate(-12deg)}
+.br-company-sticker{position:absolute;right:8px;top:8px;width:76px;height:76px;transform:rotate(9deg)}
+.br-manifesto-sticker{position:absolute;right:0;bottom:-22px;width:88px;height:88px;transform:rotate(13deg)}
+.br-combo-sticker{position:absolute;right:7%;top:58px;width:116px;height:116px;transform:rotate(-10deg)}
+.br-offers-sticker{position:absolute;right:19%;top:48px;width:100px;height:100px;transform:rotate(12deg)}
+.br-menu-sticker{position:absolute;right:7%;bottom:64px;width:104px;height:104px;transform:rotate(-9deg)}
+
+/* Discovery controls: clear selected state and a six-stop cycle indicator. */
+.discovery-cycle-progress{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:5px;margin:0 0 18px}
+.discovery-cycle-progress span{height:3px;border-radius:99px;background:rgba(18,60,45,.14);transition:background .25s,transform .25s}
+.discovery-cycle-progress span.active{background:var(--br-botanical);transform:scaleY(1.6)}
+.discovery-tabs button:focus-visible,.br-menu-sticky-nav button:focus-visible,.br-menu-category:focus-visible{outline:3px solid var(--br-lime);outline-offset:3px}
+
+/* The mood section is intentionally a balanced 2 Ã— 2 editorial composition. */
+.br-craving-image-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.br-craving-image-cards a{min-height:330px}
+.br-craving-image-cards a:nth-child(1){justify-content:flex-end}
+.br-craving-image-cards a:nth-child(2){justify-content:center}
+.br-craving-image-cards a:nth-child(3){justify-content:flex-start}
+.br-craving-image-cards a:nth-child(4){justify-content:center}
+
+/* Menu data failures now produce an honest, visible state instead of an empty page. */
+.br-menu-load-error{margin:28px 0;padding:24px 26px;border:1px solid rgba(18,60,45,.2);border-radius:20px;background:#fffdf7;color:var(--br-forest)}
+.br-menu-load-error b{display:block;font:800 20px "Syne",sans-serif}
+.br-menu-load-error p{max-width:680px;margin:8px 0 15px;color:#667064;font-size:13px;line-height:1.7}
+.br-menu-load-error button{border:0;border-radius:99px;padding:11px 16px;background:var(--br-forest);color:#fff;font:700 11px "DM Sans",sans-serif}
+
+/* Combo cards link to the real menu categories; no unverified bundle prices or inclusions. */
+.br-combo-categories{margin-top:18px;padding-top:14px;border-top:1px solid rgba(18,60,45,.16)}
+.br-combo-categories>span{display:block;margin-bottom:9px;color:var(--br-botanical);font:800 8px "Syne",sans-serif;letter-spacing:.13em}
+.br-combo-categories>div{display:flex;flex-wrap:wrap;gap:7px}
+.br-combo-categories a{display:inline-flex;align-items:center;border:1px solid rgba(18,60,45,.18);border-radius:99px;padding:7px 10px;color:var(--br-forest);font:700 9px "DM Sans",sans-serif;transition:background .2s,color .2s,border-color .2s}
+.br-combo-categories a:hover{background:var(--br-forest);border-color:var(--br-forest);color:#fff}
+.br-combo-card .combo-card-copy p{min-height:78px}
+
+/* Three belief panels have their own visual rhythm while keeping white copy legible. */
+.br-story-values .br-values-intro h2,.br-story-values .br-values-intro h2 em,.br-story-values .value-list article h3{color:#fff!important}
+.br-story-values .value-list article{min-height:188px;overflow:hidden}
+.br-story-values .value-list article.br-value-one{background:linear-gradient(115deg,rgba(184,227,74,.16),rgba(255,255,255,.035));margin-right:42px}
+.br-story-values .value-list article.br-value-two{background:linear-gradient(115deg,rgba(255,255,255,.09),rgba(216,201,174,.08));margin-left:22px}
+.br-story-values .value-list article.br-value-three{background:linear-gradient(115deg,rgba(216,201,174,.15),rgba(255,255,255,.035));margin-left:54px}
+.br-value-mark{position:absolute;right:24px;top:20px;color:rgba(184,227,74,.7);font:700 30px "Bodoni Moda",serif}
+.br-story-values .value-list article>div{padding-right:25px}
+.br-manifesto-copy .text-link{display:inline-flex;margin-top:12px}
+
+/* Responsive sticker placement and two-column mood cards. */
+@media(max-width:1050px){.br-craving-image-cards{grid-template-columns:repeat(2,minmax(0,1fr))}.br-combo-sticker{right:4%;top:35px;width:92px;height:92px}.br-menu-sticker{right:4%;bottom:40px;width:88px;height:88px}}
+@media(max-width:760px){.br-feature-sticker{right:0;top:-34px;width:76px;height:76px}.br-story-sticker{top:-28px;width:70px;height:70px}.br-company-sticker{width:64px;height:64px}.br-manifesto-sticker{width:70px;height:70px;bottom:-10px}.br-combo-sticker,.br-offers-sticker,.br-menu-sticker{display:none}.br-story-values .value-list article.br-value-one,.br-story-values .value-list article.br-value-two,.br-story-values .value-list article.br-value-three{margin-left:0;margin-right:0}.br-value-mark{right:14px;top:12px}.br-craving-image-cards{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.br-craving-image-cards a{min-height:250px}}
+@media(max-width:480px){.br-craving-image-cards{grid-template-columns:1fr}.br-craving-image-cards a{min-height:250px}.br-feature-sticker{width:64px;height:64px}.discovery-cycle-progress{gap:3px}.br-story-values .value-list article{min-height:0}}
+@media(prefers-reduced-motion:reduce){.discovery-cycle-progress span,.br-combo-categories a{transition:none!important}}
+
+
+/* ===== BITE RIOT final repair: reliable hero layers, story rhythm, bag and checkout ===== */
+.br-hero-slideshow{position:absolute;inset:0;z-index:0;overflow:hidden;background:#102d22}
+.br-hero-slide{position:absolute;inset:-1.5%;display:block;width:103%;height:103%;object-fit:cover;object-position:center 48%;opacity:0;transform:scale(1.045);filter:saturate(.96);transition:opacity 1.15s cubic-bezier(.22,.61,.36,1),transform 5s ease;will-change:opacity,transform}
+.br-hero-slide.is-active{opacity:1;transform:scale(1)}
+.br-hero-slideshow-shade{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(7,25,17,.84) 0%,rgba(7,25,17,.66) 43%,rgba(7,25,17,.22) 100%),linear-gradient(0deg,rgba(7,25,17,.46),transparent 58%)}
+.br-hero-background-mode .br-hero-layout,.br-hero-background-mode .br-hero-bottomline{position:relative;z-index:2}
+.br-menu-hero{position:relative;isolation:isolate;overflow:hidden;background:#102d22}
+.br-menu-hero>.br-hero-slideshow{z-index:0}
+.br-menu-hero>.br-menu-hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(8,27,19,.88),rgba(8,27,19,.58) 48%,rgba(8,27,19,.18)),linear-gradient(0deg,rgba(8,27,19,.35),transparent 55%);pointer-events:none}
+.br-menu-hero .br-menu-hero-content{position:relative;z-index:2}
+.br-menu-hero .br-menu-sticker{z-index:3}
+.br-menu-hero .br-menu-hero-progress{z-index:3}
+.story-hero>.br-hero-slideshow{z-index:0}
+.story-hero>.story-hero-content,.story-hero>.story-side-note{position:relative;z-index:2}
+.story-hero>.story-side-note{position:absolute}
+.br-hero-slideshow img{user-select:none}
+
+/* Story manifesto: generous editorial two-column introduction and a full-width image. */
+.br-manifesto{padding:clamp(88px,9vw,138px) 0;background:#f4ecdf}
+.br-manifesto .manifesto-grid{display:grid;grid-template-columns:minmax(0,.95fr) minmax(0,1.05fr);gap:clamp(34px,6vw,88px) clamp(34px,7vw,100px);align-items:center}
+.br-manifesto-heading{position:relative;min-width:0;padding:10px 0 24px}
+.br-manifesto-heading .eyebrow{margin-bottom:22px;letter-spacing:.18em}
+.br-manifesto-heading h2{font-size:clamp(58px,7.3vw,106px);line-height:.88;letter-spacing:-.075em;margin:0;max-width:650px}
+.br-manifesto-heading h2 em{font-family:"Bodoni Moda",Georgia,serif;font-weight:600}
+.br-manifesto-sticker{position:absolute;right:1%;bottom:-20px;width:clamp(72px,9vw,118px);height:auto;transform:rotate(10deg)}
+.br-manifesto-copy{min-width:0;max-width:620px;padding:14px 0 10px}
+.br-manifesto-copy p{margin:0 0 20px;color:#5e685d;font-size:clamp(14px,1.15vw,16px);line-height:1.95}
+.br-manifesto-copy .manifesto-lead{margin-bottom:24px;color:#123c2d;font:500 clamp(24px,2.4vw,34px)/1.28 "Bodoni Moda",Georgia,serif;letter-spacing:-.025em}
+.br-manifesto-copy .text-link{display:inline-flex;align-items:center;gap:12px;margin-top:10px;padding-bottom:8px;border-bottom:1px solid #1d6042;color:#123c2d;font:800 11px "Syne",sans-serif;letter-spacing:.1em;text-transform:uppercase}
+.br-manifesto-image{grid-column:1/-1;position:relative;height:clamp(310px,43vw,570px);min-height:0;margin-top:clamp(8px,2vw,28px);overflow:hidden;border-radius:30px;background:#d8c9ae;box-shadow:0 26px 65px rgba(20,40,27,.12)}
+.br-manifesto-image img{display:block;width:100%;height:100%;min-height:0;object-fit:cover;object-position:center 54%;transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+.br-manifesto-image:hover img{transform:scale(1.025)}
+.br-manifesto-image span{position:absolute;left:24px;bottom:24px;max-width:calc(100% - 48px);padding:14px 18px;border:1px solid rgba(255,255,255,.25);border-radius:999px;background:rgba(18,60,45,.84);color:#fff;font:800 9px "Syne",sans-serif;letter-spacing:.16em}
+
+/* Story gallery: a more spacious, varied editorial rhythm. */
+.br-story-gallery{padding:clamp(88px,9vw,132px) 0;background:#102f24}
+.br-story-gallery .story-gallery-head{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(220px,.65fr);align-items:end;gap:clamp(28px,6vw,90px);margin-bottom:clamp(42px,6vw,76px)}
+.br-story-gallery .story-gallery-head .eyebrow{color:#b8e34a}
+.br-story-gallery .story-gallery-head h2{max-width:800px;margin:20px 0 0;font-size:clamp(48px,7vw,92px);line-height:.91;letter-spacing:-.07em}
+.br-story-gallery .story-gallery-head>p{max-width:340px;margin:0 0 5px;color:#d0d9cb;font-size:14px;line-height:1.9}
+.br-story-gallery .editorial-gallery{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-auto-rows:clamp(54px,7vw,100px);gap:clamp(12px,1.8vw,22px);margin-top:0}
+.br-story-gallery .editorial-shot{min-width:0;display:flex;flex-direction:column;gap:0}
+.br-story-gallery .editorial-shot:nth-child(1){grid-column:span 7;grid-row:span 4}
+.br-story-gallery .editorial-shot:nth-child(2){grid-column:span 5;grid-row:span 3}
+.br-story-gallery .editorial-shot:nth-child(3){grid-column:span 3;grid-row:span 2}
+.br-story-gallery .editorial-shot:nth-child(4){grid-column:span 2;grid-row:span 2}
+.br-story-gallery .editorial-shot:nth-child(5){grid-column:span 5;grid-row:span 3}
+.br-story-gallery .editorial-shot:nth-child(6){grid-column:span 7;grid-row:span 3}
+.br-story-gallery .editorial-shot:nth-child(7){grid-column:span 5;grid-row:span 2}
+.br-story-gallery .editorial-shot:nth-child(8){grid-column:span 7;grid-row:span 2}
+.br-story-gallery .editorial-shot-img,.br-story-gallery .editorial-shot.large .editorial-shot-img,.br-story-gallery .editorial-shot.tall .editorial-shot-img{position:relative;flex:1;height:auto;min-height:0;overflow:hidden;border-radius:22px;background:#d8c9ae}
+.br-story-gallery .editorial-shot-img img{display:block;width:100%;height:100%;min-height:0;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.br-story-gallery .editorial-shot:hover .editorial-shot-img img{transform:scale(1.045)}
+.br-story-gallery .shot-caption{display:flex;align-items:baseline;justify-content:space-between;gap:12px;min-height:42px;padding:13px 3px 2px;color:#f3f0e7}
+.br-story-gallery .shot-caption b{font:700 12px "Syne",sans-serif}
+.br-story-gallery .shot-caption span{font-size:8px;letter-spacing:.12em;color:#a9c1a9;text-align:right}
+.br-story-gallery .gallery-footnote{margin-top:34px;padding-top:22px}
+
+/* Bag page */
+.br-cart-hero{position:relative;isolation:isolate;min-height:510px;display:flex;align-items:center;overflow:hidden;background:#102d22;color:#f5f0e5}
+.br-cart-hero>.br-hero-slideshow{z-index:0}
+.br-cart-hero-shade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(7,25,17,.9),rgba(7,25,17,.64) 52%,rgba(7,25,17,.2)),linear-gradient(0deg,rgba(7,25,17,.4),transparent 60%)}
+.br-cart-hero-content{position:relative;z-index:2;padding-top:85px;padding-bottom:78px}
+.br-cart-hero-content .eyebrow{color:#b8e34a}
+.br-cart-hero h1{font-size:clamp(72px,10vw,132px);line-height:.82;margin:26px 0}
+.br-cart-hero h1 em{color:#b8e34a;font-family:"Bodoni Moda",serif}
+.br-cart-hero-content>p{max-width:470px;color:#e0e7dc;font-size:15px;line-height:1.85}
+.br-cart-hero-foot{display:flex;justify-content:space-between;max-width:650px;margin-top:68px;padding-top:18px;border-top:1px solid #ffffff55;color:#d9e3d5;font:800 9px "Syne",sans-serif;letter-spacing:.17em}
+.br-cart-main{padding-top:82px;padding-bottom:120px}
+.br-cart-layout{display:grid;grid-template-columns:minmax(0,1.55fr) minmax(290px,.75fr);gap:clamp(34px,6vw,88px);align-items:start}
+.br-cart-heading{display:flex;justify-content:space-between;align-items:end;gap:18px;padding-bottom:28px;border-bottom:1px solid #123c2d25}
+.br-cart-heading .eyebrow,.br-cart-summary>.eyebrow{color:#1d6042}
+.br-cart-heading h2,.br-cart-summary h2{margin:13px 0 0;font-size:clamp(36px,4.5vw,58px);line-height:.9}
+.br-cart-heading h2 span{color:#1d6042}
+.br-cart-heading>span{padding-bottom:5px;color:#6f796e;font:800 9px "Syne",sans-serif;letter-spacing:.14em}
+.br-cart-list{display:grid}
+.br-cart-item{display:grid;grid-template-columns:150px minmax(0,1fr) auto;gap:22px;align-items:center;padding:26px 0;border-bottom:1px solid #123c2d20}
+.br-cart-item>img{width:150px;height:132px;display:block;object-fit:cover;border-radius:18px;background:#e6dece}
+.br-cart-item-copy{min-width:0}
+.br-cart-item-copy .eyebrow{font-size:8px}
+.br-cart-item-copy h3{margin:8px 0;color:#123c2d;font:700 21px "Syne",sans-serif;letter-spacing:-.04em}
+.br-cart-item-copy>strong{color:#1d6042;font-size:14px}
+.br-cart-line-total{align-self:start;padding-top:5px;color:#123c2d;font-size:14px}
+.br-cart-quantity{display:flex;align-items:center;gap:11px;margin-top:16px}
+.br-cart-quantity>button:not(.br-cart-remove){width:31px;height:31px;display:grid;place-items:center;border:1px solid #123c2d30;border-radius:50%;background:transparent;color:#123c2d}
+.br-cart-quantity>span{min-width:14px;text-align:center;font-size:12px;font-weight:800}
+.br-cart-quantity .br-cart-remove{display:inline-flex;align-items:center;gap:5px;margin-left:6px;border:0;background:transparent;color:#7a6255;font-size:10px}
+.br-continue-shopping,.br-checkout-back{display:inline-flex;align-items:center;gap:9px;margin-top:25px;color:#1d6042;font:800 10px "Syne",sans-serif;letter-spacing:.08em;text-transform:uppercase}
+.br-cart-summary{position:sticky;top:112px;padding:32px;border:1px solid #123c2d18;border-radius:24px;background:#fffdf7;box-shadow:0 22px 55px rgba(18,60,45,.07)}
+.br-cart-summary h2{margin-bottom:28px}
+.br-cart-summary h2 em{color:#1d6042;font-family:"Bodoni Moda",serif}
+.br-cart-summary-lines{display:grid;gap:14px;padding:18px 0;border-top:1px solid #123c2d20;border-bottom:1px solid #123c2d20}
+.br-cart-summary-lines>div{display:flex;justify-content:space-between;gap:12px;color:#687267;font-size:11px;line-height:1.5}
+.br-cart-summary-lines b{flex-shrink:0;color:#123c2d}
+.br-cart-subtotal,.br-checkout-total{display:flex;justify-content:space-between;align-items:center;gap:14px;padding:20px 0 8px;color:#123c2d}
+.br-cart-subtotal strong,.br-checkout-total strong{font:800 24px "Syne",sans-serif}
+.br-cart-fee-note,.br-cart-summary-placeholder{color:#788074;font-size:10px;line-height:1.8}
+.br-cart-checkout,.br-checkout-submit{width:100%;margin-top:17px}
+.br-cart-secure-note{margin-top:17px;color:#6d796d;font:800 8px "Syne",sans-serif;letter-spacing:.1em;line-height:1.7}
+.br-cart-help{display:grid;gap:6px;margin-top:25px;padding-top:20px;border-top:1px solid #123c2d20}
+.br-cart-help b{color:#123c2d;font:700 12px "Syne",sans-serif}
+.br-cart-help span{color:#788074;font-size:10px;line-height:1.7}
+.br-cart-empty{display:grid;justify-items:start;gap:15px;padding:55px 0}
+.br-cart-empty-icon{width:60px;height:60px;display:grid;place-items:center;border-radius:50%;background:#e4ebd4;color:#123c2d}
+.br-cart-empty h3{margin:0;color:#123c2d;font:800 clamp(42px,5vw,66px)/.9 "Syne",sans-serif;letter-spacing:-.07em}
+.br-cart-empty h3 em{color:#1d6042;font-family:"Bodoni Moda",serif}
+.br-cart-empty p{max-width:420px;color:#6d786b;font-size:13px;line-height:1.8}
+
+/* Checkout */
+.br-checkout-hero{position:relative;isolation:isolate;min-height:420px;display:flex;align-items:center;overflow:hidden;background:#102d22;color:#f5f0e5}
+.br-checkout-hero-photo{position:absolute;inset:0;z-index:0}
+.br-checkout-hero-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,25,17,.92),rgba(7,25,17,.65) 48%,rgba(7,25,17,.12))}
+.br-checkout-hero-photo img{width:100%;height:100%;display:block;object-fit:cover;object-position:center 52%}
+.br-checkout-hero-content{position:relative;z-index:1;padding-top:72px;padding-bottom:72px}
+.br-checkout-hero .eyebrow{color:#b8e34a}
+.br-checkout-hero h1{font-size:clamp(65px,9vw,108px);line-height:.83;margin:23px 0}
+.br-checkout-hero h1 em{color:#b8e34a;font-family:"Bodoni Moda",serif}
+.br-checkout-hero p{max-width:500px;color:#e0e7dc;font-size:14px;line-height:1.8}
+.br-checkout-hero-content>span{display:block;margin-top:35px;color:#b8e34a;font:800 9px "Syne",sans-serif;letter-spacing:.18em}
+.br-checkout-section{padding-top:80px;padding-bottom:120px}
+.br-checkout-layout{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(310px,.75fr);gap:clamp(35px,7vw,100px);align-items:start}
+.br-checkout-form-wrap{min-width:0}
+.br-checkout-back{margin:0 0 45px}
+.br-checkout-form-title{margin:15px 0 15px;color:#123c2d;font-size:clamp(48px,6vw,76px);line-height:.86}
+.br-checkout-form-title em,.br-checkout-summary h2 em{color:#1d6042;font-family:"Bodoni Moda",serif}
+.br-checkout-intro{max-width:500px;margin-bottom:30px;color:#6d786b;font-size:12px;line-height:1.8}
+.br-checkout-form{display:grid;gap:19px}
+.br-checkout-form label{display:grid;gap:9px;color:#123c2d;font:800 9px "Syne",sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.br-checkout-form input,.br-checkout-form textarea{width:100%;min-height:52px;padding:15px 17px;border:1px solid #d5cebf;border-radius:13px;background:#fffdf7;color:#252b22;font:500 13px "DM Sans",sans-serif;letter-spacing:0;text-transform:none;outline:none;transition:border-color .2s,box-shadow .2s}
+.br-checkout-form textarea{min-height:100px;resize:vertical}
+.br-checkout-form input:focus,.br-checkout-form textarea:focus{border-color:#1d6042;box-shadow:0 0 0 3px rgba(29,96,66,.1)}
+.br-checkout-form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.br-optional{color:#92998c;font-size:8px}
+.br-checkout-payment-note{display:flex;align-items:flex-start;gap:13px;padding:17px;border:1px solid #d8dfc7;border-radius:15px;background:#eef1e6;color:#123c2d}
+.br-checkout-payment-note>div{display:grid;gap:5px}
+.br-checkout-payment-note b{font:800 10px "Syne",sans-serif}
+.br-checkout-payment-note span{color:#667264;font-size:10px;line-height:1.7}
+.br-checkout-summary{position:sticky;top:112px;padding:30px;border-radius:23px;background:#123c2d;color:#f5f0e5}
+.br-checkout-summary>.eyebrow{color:#b8e34a}
+.br-checkout-summary h2{margin:14px 0 28px;font-size:clamp(38px,4vw,54px);line-height:.9}
+.br-checkout-item{display:grid;grid-template-columns:64px minmax(0,1fr) auto;gap:12px;align-items:center;padding:13px 0;border-top:1px solid #ffffff25}
+.br-checkout-item img{width:64px;height:60px;object-fit:cover;border-radius:10px}
+.br-checkout-item>div{display:grid;gap:5px;min-width:0}
+.br-checkout-item b{font:700 11px "Syne",sans-serif}
+.br-checkout-item span{color:#c5d2c4;font-size:9px}
+.br-checkout-item strong{font-size:10px;white-space:nowrap}
+.br-checkout-total{margin-top:10px;border-top:1px solid #ffffff35;color:#fff}
+.br-checkout-total strong{font-size:23px}
+.br-checkout-summary-note{color:#c3d0c2;font-size:9px;line-height:1.8}
+.br-checkout-brand-note{margin-top:28px;padding-top:22px;border-top:1px solid #ffffff30;color:#b8e34a;font:800 12px/1.2 "Syne",sans-serif;letter-spacing:.15em}
+.br-checkout-brand-note em{font-family:"Bodoni Moda",serif;font-size:24px}
+.br-checkout-success,.br-checkout-empty{display:grid;justify-items:start;gap:16px;padding:30px 0}
+.br-checkout-success>svg{color:#1d6042}
+.br-checkout-success h2,.br-checkout-empty h2{margin:0;color:#123c2d;font-size:clamp(45px,6vw,72px);line-height:.9}
+.br-checkout-success h2 em,.br-checkout-empty h2 em{color:#1d6042;font-family:"Bodoni Moda",serif}
+.br-checkout-success p,.br-checkout-empty p{max-width:500px;color:#687267;font-size:12px;line-height:1.8}
+.br-checkout-empty{padding-top:0}
+
+/* Account entry: clear about the fact customer authentication is not configured. */
+.nav-account{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:13px 15px;border:1px solid rgba(245,240,229,.42);border-radius:999px;color:#f5f0e5;font-size:11px;font-weight:800;transition:background .2s,border-color .2s}
+.nav-account:hover{background:rgba(255,255,255,.1);border-color:#b8e34a}
+.br-account-hero{padding:105px 0;background:#123c2d;color:#f5f0e5}
+.br-account-hero .eyebrow{color:#b8e34a}
+.br-account-hero h1{margin:24px 0;font-size:clamp(65px,9vw,112px);line-height:.85}
+.br-account-hero h1 em{color:#b8e34a;font-family:"Bodoni Moda",serif}
+.br-account-hero p{max-width:540px;color:#d5dfd4;font-size:14px;line-height:1.9}
+.br-account-options{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.br-account-options article{padding:38px;border:1px solid #123c2d18;border-radius:22px;background:#fffdf7}
+.br-account-options article>svg{margin-bottom:25px;color:#1d6042}
+.br-account-options .eyebrow{margin-bottom:12px}
+.br-account-options h2{margin:0 0 18px;color:#123c2d;font-size:clamp(36px,4.5vw,54px);line-height:.92}
+.br-account-options h2 em{color:#1d6042;font-family:"Bodoni Moda",serif}
+.br-account-options p{max-width:430px;min-height:70px;color:#687267;font-size:12px;line-height:1.8}
+
+@media(max-width:900px){
+  .br-cart-layout,.br-checkout-layout{grid-template-columns:1fr}
+  .br-cart-summary,.br-checkout-summary{position:static}
+  .br-cart-summary{max-width:none}
+  .br-checkout-summary{order:-1}
+  .br-manifesto .manifesto-grid{grid-template-columns:1fr 1fr;gap:30px 38px}
+  .br-manifesto-image{grid-column:1/-1}
+}
+@media(max-width:640px){
+  .br-menu-hero{min-height:590px}
+  .br-menu-hero>.br-hero-slideshow{inset:0}
+  .br-manifesto{padding:78px 0}
+  .br-manifesto .manifesto-grid{grid-template-columns:1fr;gap:22px}
+  .br-manifesto-heading{padding-bottom:15px}
+  .br-manifesto-heading h2{font-size:clamp(58px,15vw,82px)}
+  .br-manifesto-sticker{right:0;bottom:-8px;width:75px}
+  .br-manifesto-copy{padding:0}
+  .br-manifesto-copy .manifesto-lead{font-size:25px}
+  .br-manifesto-image{grid-column:auto;height:280px;margin-top:12px;border-radius:18px}
+  .br-story-gallery{padding:78px 0}
+  .br-story-gallery .story-gallery-head{grid-template-columns:1fr;gap:15px;margin-bottom:32px}
+  .br-story-gallery .story-gallery-head h2{font-size:clamp(44px,12vw,65px)}
+  .br-story-gallery .editorial-gallery{grid-template-columns:1fr 1fr;grid-auto-rows:auto;gap:22px 12px}
+  .br-story-gallery .editorial-shot:nth-child(n){grid-column:auto;grid-row:auto;min-height:0}
+  .br-story-gallery .editorial-shot:nth-child(1),.br-story-gallery .editorial-shot:nth-child(6){grid-column:1/-1}
+  .br-story-gallery .editorial-shot-img,.br-story-gallery .editorial-shot.large .editorial-shot-img,.br-story-gallery .editorial-shot.tall .editorial-shot-img{height:190px;min-height:190px}
+  .br-story-gallery .editorial-shot:nth-child(1) .editorial-shot-img,.br-story-gallery .editorial-shot:nth-child(6) .editorial-shot-img{height:250px;min-height:250px}
+  .br-story-gallery .shot-caption{display:grid;gap:4px}
+  .br-story-gallery .shot-caption span{text-align:left}
+  .br-cart-hero{min-height:440px}
+  .br-cart-hero-content{padding-top:70px;padding-bottom:55px}
+  .br-cart-hero h1{font-size:clamp(66px,17vw,94px)}
+  .br-cart-hero-foot{margin-top:45px;font-size:7px}
+  .br-cart-main,.br-checkout-section{padding-top:55px;padding-bottom:75px}
+  .br-cart-layout,.br-checkout-layout{gap:35px}
+  .br-cart-item{grid-template-columns:94px minmax(0,1fr);gap:14px;padding:20px 0}
+  .br-cart-item>img{width:94px;height:104px}
+  .br-cart-item-copy h3{font-size:16px}
+  .br-cart-line-total{grid-column:2;grid-row:1;justify-self:end;align-self:start}
+  .br-cart-item-copy{grid-column:2;grid-row:1;padding-right:72px}
+  .br-cart-quantity{gap:8px;flex-wrap:wrap}
+  .br-cart-quantity .br-cart-remove{margin-left:0}
+  .br-cart-summary{padding:24px}
+  .br-checkout-hero{min-height:380px}
+  .br-checkout-hero-content{padding-top:58px;padding-bottom:58px}
+  .br-checkout-form-row{grid-template-columns:1fr}
+  .br-checkout-summary{padding:23px}
+  .br-account-hero{padding:75px 0}
+  .br-account-options{grid-template-columns:1fr}
+  .br-account-options article{padding:27px}
+  .nav-account{padding:11px 12px;font-size:10px}
+  .nav-account span{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .br-hero-slide,.br-manifesto-image img,.br-story-gallery .editorial-shot-img img{transition:none!important;transform:none!important}
+}
+
+.br-menu-data-note{margin:20px 0 0;padding:13px 16px;border-left:3px solid #b8e34a;background:#eef1e6;color:#536454;font-size:11px;line-height:1.7}
+
+/* Ensure the final Story copy rules outrank the older generic manifesto selectors. */
+.br-manifesto .manifesto-grid .br-manifesto-copy p{margin:0 0 20px;color:#5e685d;font-size:clamp(14px,1.15vw,16px);line-height:1.95}
+.br-manifesto .manifesto-grid .br-manifesto-copy .manifesto-lead{margin-bottom:24px;color:#123c2d;font:500 clamp(24px,2.4vw,34px)/1.28 "Bodoni Moda",Georgia,serif;letter-spacing:-.025em}
+
+@media(max-width:380px){
+  .nav{gap:7px}
+  .brand{min-width:0}
+  .brand img{width:108px}
+  .nav-actions{gap:6px}
+  .nav-account{padding:10px}
+  .navbtn{padding:10px 11px;gap:6px}
+  .mobile-menu-toggle{width:40px;height:40px}
+}
+
+
+/* BITE RIOT final reliability and interaction pass */
+.br-hero-slideshow{z-index:0!important}
+.br-hero-slideshow-shade{z-index:1;pointer-events:none}
+.br-hero-slide{display:block!important;width:103%!important;height:103%!important;object-fit:cover!important;object-position:center!important}
+.br-menu-hero>.br-hero-slideshow{position:absolute;inset:0;z-index:0}
+.br-menu-hero>.br-menu-hero-shade{position:absolute;inset:0;z-index:1;pointer-events:none}
+.br-menu-hero>.br-menu-hero-content,.br-menu-hero>.br-menu-sticker,.br-menu-hero>.br-menu-hero-progress{position:relative;z-index:2}
+.br-menu-page .br-menu-content{position:relative;z-index:2;min-height:500px;background:#f5f0e5}
+.br-menu-page .br-menu-browser{display:block;min-height:300px}
+.br-menu-page .br-menu-product-section{display:block;visibility:visible;opacity:1}
+.br-menu-page .br-product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.br-menu-page .br-product-card{min-width:0;visibility:visible;opacity:1}
+.br-menu-page .br-product-card .product-img img{display:block}
+.br-combo-card{cursor:pointer;transition:transform .38s cubic-bezier(.2,.7,.2,1),box-shadow .38s,border-color .38s!important}
+.br-combo-card:hover{transform:translateY(-10px) rotate(-.35deg)!important;box-shadow:0 28px 58px rgba(18,60,45,.2)!important}
+.br-combo-card:hover .combo-card-image img{transform:scale(1.09)!important;filter:saturate(1.12)}
+.br-combo-card .combo-card-copy{transition:background .3s}
+.br-combo-card:hover .combo-card-copy{background:#f4f0e5}
+.br-combo-card .br-combo-categories a{transition:color .2s,transform .2s}
+.br-combo-card .br-combo-categories a:hover{color:#1d6042;transform:translateX(4px)}
+.br-account-form{display:grid;gap:14px;max-width:560px;margin-top:24px}
+.br-account-form label{display:grid;gap:7px;color:#123c2d;font:800 9px "Syne",sans-serif;letter-spacing:.12em;text-transform:uppercase}
+.br-account-form input{width:100%;min-height:50px;padding:14px 16px;border:1px solid #d5cebf;border-radius:12px;background:#fffdf7;color:#252b22;font:500 13px "DM Sans",sans-serif;letter-spacing:0;text-transform:none}
+.br-account-form button{justify-self:start}
+.br-account-feedback{padding:12px 15px;border-radius:12px;background:#eef1e6;color:#123c2d;font-size:12px;line-height:1.6}
+.br-toast-region{position:fixed;right:22px;top:100px;z-index:9999;display:grid;gap:10px;width:min(360px,calc(100vw - 32px));pointer-events:none}
+.br-toast{display:flex;align-items:center;gap:11px;padding:15px 17px;border:1px solid rgba(255,255,255,.18);border-radius:15px;background:#123c2d;color:#fffdf7;box-shadow:0 15px 40px rgba(0,0,0,.2);font-size:12px;font-weight:700;animation:br-toast-in .25s ease both}
+.br-toast-mark{width:24px;height:24px;display:grid;place-items:center;border-radius:50%;background:#b8e34a;color:#123c2d;flex:none}
+@keyframes br-toast-in{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
+.br-manifesto .manifesto-grid{display:grid;grid-template-columns:minmax(260px,.8fr) minmax(0,1.2fr);gap:clamp(28px,5vw,70px);align-items:center}
+.br-manifesto-side{display:grid;grid-template-columns:minmax(0,1fr) minmax(180px,.8fr);gap:24px;align-items:center;min-width:0}
+.br-manifesto-copy{min-width:0}
+.br-manifesto-image{position:relative;grid-column:auto!important;width:100%;height:340px;min-height:0;margin:0!important;overflow:hidden;border-radius:20px}
+.br-manifesto-image img{width:100%;height:100%;object-fit:cover;display:block}
+.br-manifesto-sticker{max-width:120px}
+@media(max-width:900px){.br-menu-page .br-product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.br-manifesto .manifesto-grid{grid-template-columns:1fr}.br-manifesto-side{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.br-menu-page .br-product-grid{grid-template-columns:1fr 1fr;gap:12px}.br-manifesto-side{grid-template-columns:1fr}.br-manifesto-image{height:280px}.br-toast-region{top:82px;right:12px}}
+
+.br-account-form-tabs{display:flex;gap:8px;margin:22px 0 5px}
+.br-account-form-tabs button{border:1px solid #123c2d2a;border-radius:999px;padding:10px 15px;background:transparent;color:#123c2d;font-size:10px;font-weight:800}
+.br-account-form-tabs button.active{background:#123c2d;color:#f5f0e5}
+.br-account-security{max-width:520px;color:#7a8277;font-size:10px;line-height:1.7}
+.br-account-signout{display:inline-flex;align-items:center;gap:8px;margin-top:18px;border:0;background:transparent;color:#687267;font-size:11px;font-weight:700}
+.br-combo-contact{padding:70px 0;background:#123c2d;color:#f5f0e5}
+.br-combo-contact>.wrap{display:flex;align-items:center;justify-content:space-between;gap:35px}
+.br-combo-contact span{color:#b8e34a;font:800 9px "Syne",sans-serif;letter-spacing:.16em}
+.br-combo-contact h2{margin:13px 0;font:800 clamp(42px,6vw,76px)/.88 "Syne",sans-serif;letter-spacing:-.07em}
+.br-combo-contact h2 em{color:#b8e34a;font-family:"Bodoni Moda",serif}
+.br-combo-contact p{max-width:430px;color:#d5dfd4;font-size:12px;line-height:1.8}
+@media(max-width:640px){.br-combo-contact>.wrap{align-items:flex-start;flex-direction:column}}
+
+/* Restore the complete Menu catalogue layout. */
+.br-menu-page .br-menu-content,
+.br-menu-page .br-menu-browser,
+.br-menu-page .br-menu-categories,
+.br-menu-page .br-menu-toolbar,
+.br-menu-page .br-menu-product-section,
+.br-menu-page .product-reveal,
+.br-menu-page .br-product-card {
+  visibility: visible !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+.br-menu-page .br-product-grid {
+  display: grid !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.br-menu-page .br-product-card .product-img {
+  display: block !important;
+  overflow: hidden;
+}
+
+.br-menu-page .br-product-card .product-img img {
+  display: block !important;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Make both hero slideshows fill their image containers. */
+.br-hero-slideshow {
+  position: absolute !important;
+  inset: 0 !important;
+  z-index: 0 !important;
+  display: block !important;
+  overflow: hidden;
+}
+
+.br-hero-slide {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  object-fit: cover !important;
+}
+
+.br-hero-slide.is-active {
+  opacity: 1 !important;
+}
+
+.br-menu-hero,
+.br-hero-background-mode {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+@media (max-width: 900px) {
+  .br-menu-page .br-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .br-menu-page .br-product-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+}
+
+/* BITE RIOT OUR STORY MANIFESTO REFINEMENT */
+
+.br-manifesto {
+  padding: clamp(64px, 7vw, 100px) 0 !important;
+  overflow: hidden;
+  background: #f4ecdf !important;
+}
+
+.br-manifesto .manifesto-grid {
+  display: grid !important;
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr) !important;
+  align-items: center !important;
+  gap: clamp(28px, 5vw, 68px) !important;
+}
+
+.br-manifesto-heading {
+  min-width: 0;
+  padding: 8px 0 20px !important;
+}
+
+.br-manifesto-heading .eyebrow {
+  font-size: 10px;
+  line-height: 1.6;
+  letter-spacing: .14em;
+  margin-bottom: 20px !important;
+}
+
+.br-manifesto-heading h2 {
+  max-width: 100% !important;
+  margin: 0 !important;
+  font-size: clamp(43px, 5.7vw, 78px) !important;
+  line-height: .94 !important;
+  letter-spacing: -.065em !important;
+  overflow-wrap: normal;
+  word-break: normal;
+}
+
+.br-manifesto-heading h2 em {
+  font-family: "Bodoni Moda", Georgia, serif !important;
+  font-weight: 600;
+  letter-spacing: -.045em !important;
+}
+
+.br-manifesto-sticker {
+  right: 0 !important;
+  bottom: -18px !important;
+  width: clamp(62px, 7vw, 88px) !important;
+  height: auto;
+}
+
+.br-manifesto-side {
+  display: flex !important;
+  flex-direction: column !important;
+  min-width: 0;
+  gap: 22px !important;
+}
+
+.br-manifesto-copy {
+  width: 100%;
+  max-width: 650px !important;
+  padding: 0 !important;
+}
+
+.br-manifesto-copy p {
+  margin: 0 0 15px !important;
+  font-size: clamp(13px, 1.05vw, 15px) !important;
+  line-height: 1.8 !important;
+  color: #596459;
+}
+
+.br-manifesto-copy .manifesto-lead {
+  margin-bottom: 18px !important;
+  color: #123c2d !important;
+  font-family: "Bodoni Moda", Georgia, serif !important;
+  font-size: clamp(22px, 2.1vw, 30px) !important;
+  line-height: 1.25 !important;
+  letter-spacing: -.025em;
+}
+
+.br-manifesto-copy .text-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 4px !important;
+}
+
+.br-manifesto-image {
+  position: relative !important;
+  width: 100% !important;
+  height: clamp(210px, 23vw, 300px) !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  grid-column: auto !important;
+  overflow: hidden;
+  border-radius: 22px !important;
+  background: #d8c9ae;
+  box-shadow: 0 18px 40px rgba(20,40,27,.12);
+}
+
+.br-manifesto-image img {
+  display: block;
+  width: 100%;
+  height: 100% !important;
+  min-height: 0 !important;
+  object-fit: cover !important;
+  object-position: center 52%;
+  transition: transform .7s ease;
+}
+
+.br-manifesto-image:hover img {
+  transform: scale(1.035);
+}
+
+.br-manifesto-image span {
+  left: 12px;
+  right: 12px;
+  bottom: 12px;
+  padding: 11px 13px;
+  font-size: 8px;
+}
+
+@media (max-width: 760px) {
+  .br-manifesto {
+    padding: 62px 0 !important;
+  }
+
+  .br-manifesto .manifesto-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+    gap: 25px !important;
+  }
+
+  .br-manifesto-heading {
+    padding-bottom: 10px !important;
+  }
+
+  .br-manifesto-heading h2 {
+    font-size: clamp(48px, 11vw, 72px) !important;
+    line-height: .94 !important;
+  }
+
+  .br-manifesto-sticker {
+    right: 8px !important;
+    bottom: -12px !important;
+    width: 68px !important;
+  }
+
+  .br-manifesto-side {
+    gap: 18px !important;
+  }
+
+  .br-manifesto-copy p {
+    font-size: 14px !important;
+    line-height: 1.75 !important;
+  }
+
+  .br-manifesto-copy .manifesto-lead {
+    font-size: 25px !important;
+  }
+
+  .br-manifesto-image {
+    height: 250px !important;
+    border-radius: 18px !important;
+  }
+}
+
+@media (max-width: 420px) {
+  .br-manifesto-heading h2 {
+    font-size: 46px !important;
+  }
+
+  .br-manifesto-image {
+    height: 215px !important;
+  }
+}
+
+
+/* BITE RIOT INTERACTION EFFECTS — scoped to interactive elements */
+
+/* Product cards */
+.br-product-card,
+.br-menu-page .br-product-card {
+  transition:
+    transform .4s cubic-bezier(.2,.7,.2,1),
+    box-shadow .4s ease !important;
+  cursor: pointer;
+}
+
+.br-product-card:hover,
+.br-menu-page .br-product-card:hover {
+  transform: translateY(-9px) !important;
+  box-shadow: 0 18px 36px rgba(18,45,32,.14) !important;
+}
+
+.br-product-card img {
+  transition: transform .65s cubic-bezier(.2,.7,.2,1) !important;
+}
+
+.br-product-card:hover img {
+  transform: scale(1.055) !important;
+}
+
+/* Combo and category cards */
+.br-combo-card,
+.br-menu-category,
+.br-category-card {
+  transition:
+    transform .4s ease,
+    box-shadow .4s ease !important;
+}
+
+.br-combo-card:hover,
+.br-menu-category:hover,
+.br-category-card:hover {
+  transform: translateY(-7px) !important;
+  box-shadow: 0 16px 32px rgba(18,45,32,.13) !important;
+}
+
+/* Our Story image */
+.br-manifesto-image {
+  overflow: hidden;
+}
+
+.br-manifesto-image img {
+  transition: transform .75s cubic-bezier(.2,.7,.2,1) !important;
+}
+
+.br-manifesto-image:hover img {
+  transform: scale(1.06) !important;
+}
+
+/* Story gallery */
+.br-story-gallery img,
+.br-gallery img {
+  transition:
+    transform .65s cubic-bezier(.2,.7,.2,1),
+    filter .4s ease !important;
+}
+
+.br-story-gallery img:hover,
+.br-gallery img:hover {
+  transform: scale(1.035) !important;
+  filter: saturate(1.12);
+}
+
+/* Buttons and calls to action */
+.br-btn,
+.br-button,
+a.br-cta,
+.br-manifesto-copy .text-link {
+  transition:
+    transform .25s ease,
+    box-shadow .25s ease,
+    background-color .25s ease !important;
+}
+
+.br-btn:hover,
+.br-button:hover,
+a.br-cta:hover,
+.br-manifesto-copy .text-link:hover {
+  transform: translateY(-3px);
+}
+
+/* Keep slideshow crossfades working. */
+.br-hero-slide {
+  transition: opacity 1s ease !important;
+}
+
+/* Keyboard users get the same interactive feedback. */
+.br-product-card:focus-within,
+.br-combo-card:focus-within,
+button:focus-visible,
+a:focus-visible {
+  outline-offset: 4px;
+}
+
+
