@@ -1,5 +1,5 @@
-import { RiotLoadingScreen } from "@/components/riot-loading-screen";
+import { RiotLoadingScreen } from "@/components/site-intro";
 
 export default function Loading() {
-  return <div className="br-route-loading"><RiotLoadingScreen /></div>;
+  return <RiotLoadingScreen />;
 }
