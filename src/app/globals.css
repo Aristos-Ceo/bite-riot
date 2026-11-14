@@ -630,4 +630,10 @@ body{font-family:var(--body);background:var(--ivory);background-image:radial-gra
     line-height: 0.92 !important;
   }
 }
+/* BITE RIOT — Animate homepage hero heading */
 
+.br-hero-title {
+  animation: br-rise-in 0.65s ease both !important;
+  animation-delay: 0.12s !important;
+  will-change: opacity, transform;
+}

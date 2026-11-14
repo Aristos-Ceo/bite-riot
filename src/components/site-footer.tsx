@@ -1,3 +1,100 @@
-﻿import Link from "next/link";import {ArrowUpRight,Instagram,Facebook,Mail,MapPin,Clock} from "lucide-react";
-export function SiteFooter(){return <footer className="footer" id="contact"><div className="footer-orbit" aria-hidden="true">âœ³</div><div className="wrap"><div className="footer-topline"><span>THE LAST BITE?</span><span>WE'RE JUST GETTING STARTED â†—</span></div><div className="footer-main"><div className="footer-brand"><div className="brand"><img src="/images/brand/bite-riot-mark.svg" alt="BITE RIOT"/></div><h2>GOOD FOOD.<br/><em>ZERO QUIET.</em></h2><p>Big flavour, good company and a little attitude. Pull up a chair.</p><div className="socials"><a href="#contact" aria-label="Instagram"><Instagram/></a><a href="#contact" aria-label="Facebook"><Facebook/></a><a href="mailto:itzavery57@gmail.com" aria-label="Email"><Mail/></a></div></div><div className="footer-column"><span className="footer-label">01 / EXPLORE</span><Link href="/menu">The full menu <ArrowUpRight/></Link><Link href="/combos">Combo club <ArrowUpRight/></Link><Link href="/offers">Fresh offers <ArrowUpRight/></Link><Link href="/story">Our story <ArrowUpRight/></Link></div><div className="footer-column"><span className="footer-label">02 / YOUR ORDER</span><Link href="/cart">Your bag <ArrowUpRight/></Link><Link href="/checkout">Checkout <ArrowUpRight/></Link><Link href="/track">Track an order <ArrowUpRight/></Link><Link href="/#faq">Good to know <ArrowUpRight/></Link></div><div className="footer-contact"><span className="footer-label">03 / SAY HELLO</span><p><Mail/> <span>itzavery57@gmail.com<small>Demo contact address â€” configure before launch</small></span></p><p><MapPin/> <span>Location to be announced<small>Restaurant address not yet configured</small></span></p><p><Clock/> <span>Opening hours<small>Set your service hours in settings</small></span></p><a className="footer-contact-cta" href="mailto:itzavery57@gmail.com">Start a conversation â†—</a></div></div><div className="footer-bottom"><span>Â© 2026 BITE RIOT Â· PORTFOLIO DEMONSTRATION</span><span>MADE WITH A LITTLE EXTRA ATTITUDE.</span><span><Link href="/">Privacy</Link> Â· <Link href="/">Terms</Link></span></div></div></footer>}
+﻿
+import Link from "next/link";
+import {
+  ArrowUpRight,
+  Instagram,
+  Facebook,
+  Mail,
+  MapPin,
+  Clock,
+} from "lucide-react";
 
+export function SiteFooter() {
+  return (
+    <footer className="footer" id="contact">
+      <div className="footer-orbit" aria-hidden="true">✳</div>
+
+      <div className="wrap">
+        <div className="footer-topline">
+          <span>THE LAST BITE?</span>
+          <span>
+            WE'RE JUST GETTING STARTED <ArrowUpRight size={12} />
+          </span>
+        </div>
+
+        <div className="footer-main">
+          <div className="footer-brand">
+            <div className="brand">
+              <img src="/images/brand/bite-riot-mark.svg" alt="BITE RIOT" />
+            </div>
+
+            <h2>GOOD FOOD.<br /><em>ZERO QUIET.</em></h2>
+            <p>Big flavour, good company and a little attitude. Pull up a chair.</p>
+
+            <div className="socials">
+              <a href="#contact" aria-label="Instagram"><Instagram /></a>
+              <a href="#contact" aria-label="Facebook"><Facebook /></a>
+              <a href="mailto:itzavery57@gmail.com" aria-label="Email"><Mail /></a>
+            </div>
+          </div>
+
+          <div className="footer-column">
+            <span className="footer-label">01 / EXPLORE</span>
+            <Link href="/menu">The full menu <ArrowUpRight /></Link>
+            <Link href="/combos">Combo club <ArrowUpRight /></Link>
+            <Link href="/offers">Fresh offers <ArrowUpRight /></Link>
+            <Link href="/story">Our story <ArrowUpRight /></Link>
+          </div>
+
+          <div className="footer-column">
+            <span className="footer-label">02 / YOUR ORDER</span>
+            <Link href="/cart">Your bag <ArrowUpRight /></Link>
+            <Link href="/checkout">Checkout <ArrowUpRight /></Link>
+            <Link href="/track">Track an order <ArrowUpRight /></Link>
+            <Link href="/#faq">Good to know <ArrowUpRight /></Link>
+          </div>
+
+          <div className="footer-contact">
+            <span className="footer-label">03 / SAY HELLO</span>
+
+            <p>
+              <Mail />
+              <span>
+                itzavery57@gmail.com
+                <small>Demo contact address — configure before launch</small>
+              </span>
+            </p>
+
+            <p>
+              <MapPin />
+              <span>
+                Location to be announced
+                <small>Restaurant address not yet configured</small>
+              </span>
+            </p>
+
+            <p>
+              <Clock />
+              <span>
+                Opening hours
+                <small>Set your service hours in settings</small>
+              </span>
+            </p>
+
+            <a className="footer-contact-cta" href="mailto:itzavery57@gmail.com">
+              Start a conversation <ArrowUpRight size={14} />
+            </a>
+          </div>
+        </div>
+
+        <div className="footer-bottom">
+          <span>© 2026 BITE RIOT · PORTFOLIO DEMONSTRATION</span>
+          <span>MADE WITH A LITTLE EXTRA ATTITUDE.</span>
+          <span>
+            <Link href="/">Privacy</Link> · <Link href="/">Terms</Link>
+          </span>
+        </div>
+      </div>
+    </footer>
+  );
+}
